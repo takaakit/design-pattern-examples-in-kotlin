@@ -20,7 +20,7 @@ object NightState : State {
     // Use a safe
     override fun useSafe(context: Context) {
         // ˅
-        context.callSecurityGuardsRoom("Emergency: Use a safe at night！")
+        context.callSecurityGuardsRoom("Emergency: Use a safe at night!")
         // ˄
     }
 
