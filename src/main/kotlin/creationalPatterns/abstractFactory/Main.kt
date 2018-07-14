@@ -14,7 +14,7 @@ fun main(args: Array<String>) {
         val factory = Factory.getFactory(args[0])
 
         val washingtonPost = factory.createLink("The Washington Post", "https://www.washingtonpost.com/")
-        val newYorkTimet = factory.createLink("The NewYork Times", "https://www.nytimes.com/")
+        val newYorkTimes = factory.createLink("The NewYork Times", "https://www.nytimes.com/")
         val financialTimes = factory.createLink("The Financial Times", "https://www.ft.com/")
         val yahoo = factory.createLink("Yahoo!", "https://www.yahoo.com/")
         val google = factory.createLink("Google", "https://www.google.com/")
@@ -25,7 +25,7 @@ fun main(args: Array<String>) {
 
         val newspaper = factory.createData("Newspaper")
         newspaper.add(washingtonPost)
-        newspaper.add(newYorkTimet)
+        newspaper.add(newYorkTimes)
         newspaper.add(financialTimes)
 
         val searchEngine = factory.createData("Search engine")
