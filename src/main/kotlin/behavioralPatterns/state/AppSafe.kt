@@ -87,7 +87,7 @@ class AppSafe : Context, Application() {
         // ˅
         var clockstring = "Current Time : "
         if (hour < 10) {
-            clockstring += "0$hour:00"
+            clockstring += "0${hour.toString()}:00"
         }
         else {
             clockstring += "${hour.toString()}:00"
