@@ -82,6 +82,13 @@ References
 * Gamma, E. et al. Design Patterns: Elements of Reusable Object-Oriented Software, Addison-Wesley, 1994
 * Hiroshi Yuki. Learning Design Patterns in Java [In Japanese Language], Softbank publishing, 2004
 
+Other programming languages
+---------------------------
+
+* [Design Pattern Examples in Python](https://github.com/takaakit/design-pattern-examples-in-python)
+* [Design Pattern Examples in Ruby](https://github.com/takaakit/design-pattern-examples-in-ruby)
+* [Design Pattern Examples in Scala](https://github.com/takaakit/design-pattern-examples-in-scala)
+
 Contributing
 ------------
 We welcome your contributions. Function addition, bug fix, refactoring, etc.  
