@@ -68,7 +68,6 @@ class File(name: String, size: Int) : FileSystemElement() {
 **Kotlin 開発環境**
 * 任意の Kotlin 開発環境を用意してください。[IntelliJ](https://www.jetbrains.com/idea/download/) など。
 
-
 使い方
 ------
 * Astah のモデルブラウザ上でモデル要素を選択し、コード生成ボタンを押すとコードが生成されます。  
@@ -87,9 +86,12 @@ class File(name: String, size: Int) : FileSystemElement() {
 その他のプログラミング言語
 --------------------------
 
+* [Design Pattern Examples in C++](https://github.com/takaakit/design-pattern-examples-in-cpp)
+* [Design Pattern Examples in Golang](https://github.com/takaakit/design-pattern-examples-in-golang)
 * [Design Pattern Examples in Python](https://github.com/takaakit/design-pattern-examples-in-python)
 * [Design Pattern Examples in Ruby](https://github.com/takaakit/design-pattern-examples-in-ruby)
 * [Design Pattern Examples in Scala](https://github.com/takaakit/design-pattern-examples-in-scala)
+* [Design Pattern Examples in Swift](https://github.com/takaakit/design-pattern-examples-in-swift)
 
 Contributing
 ----
