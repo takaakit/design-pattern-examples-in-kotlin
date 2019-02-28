@@ -79,8 +79,9 @@ class Gamer(money: Int) {
             }
             // In case of 6...Gamer gets desserts
             6 -> {
-                println("Gamer gets desserts($dessert)")
-                desserts.add(dessert)
+                val acquiredDesserts = dessert
+                println("Gamer gets desserts($acquiredDesserts)")
+                desserts.add(acquiredDesserts)
             }
             // Other...Nothing happens
             else -> {
