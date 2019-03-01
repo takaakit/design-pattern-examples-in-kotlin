@@ -5,7 +5,7 @@ import javafx.scene.paint.Color
 
 // ˄
 
-class PaintingCanvas(width: Double, height: Double, history: HistoryCommand) : PaintingTarget, Canvas() {
+class PaintingCanvas(width: Double, height: Double) : PaintingTarget, Canvas() {
     // ˅
 
     // ˄
@@ -17,12 +17,6 @@ class PaintingCanvas(width: Double, height: Double, history: HistoryCommand) : P
 
     // Radius of the painting point
     private val pointRadius: Double = 6.0
-        // ˅
-        
-        // ˄
-
-    // Painting history
-    private val history: HistoryCommand = history
         // ˅
         
         // ˄

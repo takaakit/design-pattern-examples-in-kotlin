@@ -21,7 +21,7 @@ class AppMain : Application() {
         
         // ˄
 
-    private val canvas: PaintingCanvas = PaintingCanvas(400.0, 300.0, history)
+    private val canvas: PaintingCanvas = PaintingCanvas(400.0, 300.0)
         // ˅
         
         // ˄
