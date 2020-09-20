@@ -64,8 +64,11 @@ Installation
 * Download the plug-in from [M PLUS plug-in site](https://sites.google.com/view/m-plus-plugin/download), and install.  
   **Use ver.1.9 or higher.**
 
-**Development Environment for Kotlin**
-* Prepare an arbitrary development environment for Kotlin (e.g. [IntelliJ](https://www.jetbrains.com/idea/download/)).
+**Development Environment for Kotlin and JavaFX**
+* Prepare an arbitrary development environment for Kotlin and JavaFX. If you don't want to install JavaFX, you need to remove the following packages that use JavaFX to prevent build errors.
+  - src/main/kotlin/behavioralPatterns/command
+  - src/main/kotlin/behavioralPatterns/mediator
+  - src/main/kotlin/behavioralPatterns/state
 
 Usage
 -----
