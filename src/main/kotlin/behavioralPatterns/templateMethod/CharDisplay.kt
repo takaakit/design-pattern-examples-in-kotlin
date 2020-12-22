@@ -1,33 +1,32 @@
 package behavioralPatterns.templateMethod
 // ˅
-
 // ˄
 
-class CharDisplay(char: Char) : AbstractDisplay() {
+class CharDisplay(charValue: Char) : AbstractDisplay() {
     // ˅
     
     // ˄
 
-    private val char: Char = char
+    private val charValue: Char = charValue
         // ˅
         
         // ˄
 
     override fun open() {
         // ˅
-        print("<<")         // Display "<<" in the start characters.
+        print("<<") // Display "<<" in the start characters.
         // ˄
     }
 
     override fun write() {
         // ˅
-        print(char)         // Display the character.
+        print(charValue) // Display the character.
         // ˄
     }
 
     override fun close() {
         // ˅
-        println(">>")       // Display ">>" in the end characters.
+        println(">>") // Display ">>" in the end characters.
         // ˄
     }
 

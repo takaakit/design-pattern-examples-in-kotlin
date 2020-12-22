@@ -1,6 +1,5 @@
 package structuralPatterns.decorator
 // ˅
-
 // ˄
 
 class MessageDisplay(message: String) : Display() {
@@ -8,30 +7,29 @@ class MessageDisplay(message: String) : Display() {
     
     // ˄
 
-    // Number of characters
-    override val columns: Int
-        // ˅
-        get() = message.toByteArray().size
-        // ˄
-
-    // The number of rows is 1
-    override val rows: Int
-        // ˅
-        get() = 1
-        // ˄
-
     // Message to be displayed
     private val message: String = message
         // ˅
         
         // ˄
 
-    override fun getLineText(row: Int): String? {
+    // Number of characters
+    override fun getColumns(): Int {
         // ˅
-        when (row) {
-            0 -> return message
-            else -> return null
-        }
+        return message.length
+        // ˄
+    }
+
+    // The number of rows is 1
+    override fun getRows(): Int {
+        // ˅
+        return 1
+        // ˄
+    }
+
+    override fun getLineText(row: Int): String {
+        // ˅
+        return message
         // ˄
     }
 

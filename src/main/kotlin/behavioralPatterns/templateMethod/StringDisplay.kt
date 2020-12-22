@@ -1,54 +1,53 @@
 package behavioralPatterns.templateMethod
 // ˅
-
 // ˄
 
-class StringDisplay(string: String) : AbstractDisplay() {
+class StringDisplay(stringValue: String) : AbstractDisplay() {
     // ˅
     
     // ˄
 
-    private val string: String = string
+    private val stringValue: String = stringValue
         // ˅
         
         // ˄
 
     // String width
-    private val width: Int = string.toByteArray().size
+    private val width: Int = stringValue.length
         // ˅
         
         // ˄
 
     override fun open() {
         // ˅
-        writeLine()             // Write a line
+        writeLine() // Write a line
         // ˄
     }
 
     override fun write() {
         // ˅
-        println("|$string|")    // Display the character with "|"
+        println("|$stringValue|") // Display the character with "|"
         // ˄
     }
 
     override fun close() {
         // ˅
-        writeLine()              // Write a line
+        writeLine() // Write a line
         // ˄
     }
 
     private fun writeLine() {
         // ˅
-        print("+")              // Display an end mark "+"
+        print("+") // Display an end mark "+"
         for (i in 0 until width) {
-            print("-")          // Display a line "-"
+            print("-") // Display a line "-"
         }
-        println("+")            // Display an end mark "+"
+        println("+") // Display an end mark "+"
         // ˄
     }
 
     // ˅
-
+    
     // ˄
 }
 

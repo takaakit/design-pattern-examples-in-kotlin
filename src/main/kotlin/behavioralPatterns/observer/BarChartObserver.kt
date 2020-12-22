@@ -1,12 +1,10 @@
 package behavioralPatterns.observer
 // ˅
-
 // ˄
 
 // Display values with a bar chart.
 class BarChartObserver : Observer {
     // ˅
-    
     // ˄
 
     override fun update(number: Number) {
@@ -15,7 +13,7 @@ class BarChartObserver : Observer {
         for (i in 0 until number.value) {
             print("*")
         }
-        println("")
+        println()
         Thread.sleep(100)
         // ˄
     }

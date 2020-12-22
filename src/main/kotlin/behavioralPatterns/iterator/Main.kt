@@ -1,6 +1,8 @@
 package behavioralPatterns.iterator
 
-// Add books in the bookshelf and display the names of the books in turn.
+/*
+Add books in a bookshelf and display the names of the book in turn.
+ */
 
 fun main(args: Array<String>) {
     val bookShelf = BookShelf(5)
@@ -12,7 +14,7 @@ fun main(args: Array<String>) {
 
     val it = bookShelf.iterator()
     while (it.hasNext()) {
-        val book = it.next() as Book?
-        println(book?.title)
+        val book = it.next() as Book
+        println(book.title)
     }
 }

@@ -12,13 +12,13 @@ class ListData(name: String) : Data(name) {
 
     override fun toHTML(): String {
         // ˅
-        val buffer = StringBuffer()
-        buffer.append("<li>$name<ul>\n")
+        val builder = StringBuilder()
+        builder.append("<li>$name<ul>\n")
         for (item: Item in items) {
-            buffer.append(item.toHTML())
+            builder.append(item.toHTML())
         }
-        buffer.append("</ul></li>\n")
-        return buffer.toString()
+        builder.append("</ul></li>\n")
+        return builder.toString()
         // ˄
     }
 

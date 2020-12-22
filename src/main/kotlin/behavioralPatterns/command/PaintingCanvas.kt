@@ -5,9 +5,8 @@ import javafx.scene.paint.Color
 
 // ˄
 
-class PaintingCanvas(width: Double, height: Double) : PaintingTarget, Canvas() {
+class PaintingCanvas(width: Double, height: Double) : Canvas(), PaintingTarget {
     // ˅
-
     // ˄
 
     private val paintingColor: Color = Color.LIGHTGREEN
@@ -21,10 +20,10 @@ class PaintingCanvas(width: Double, height: Double) : PaintingTarget, Canvas() {
         
         // ˄
 
-    override fun paint(paintingPosX: Double, paintingPosY: Double) {
+    override fun paint(x: Double, y: Double) {
         // ˅
         graphicsContext2D.fill = paintingColor
-        graphicsContext2D.fillOval(paintingPosX - pointRadius, paintingPosY - pointRadius, pointRadius * 3, pointRadius * 3)
+        graphicsContext2D.fillOval(x - pointRadius, y - pointRadius, pointRadius * 3, pointRadius * 3)
         // ˄
     }
 

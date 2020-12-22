@@ -1,19 +1,17 @@
 package structuralPatterns.composite
 // ˅
-
 // ˄
 
 abstract class FileSystemElement {
     // ˅
-    
     // ˄
 
-    protected abstract val name: String
+    abstract val name: String
         // ˅
         
         // ˄
 
-    protected abstract val size: Int
+    abstract val size: Int
         // ˅
         
         // ˄

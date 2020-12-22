@@ -1,12 +1,10 @@
 package behavioralPatterns.observer
 // ˅
-
 // ˄
 
 // An abstract class that generates numbers.
 abstract class Number {
     // ˅
-    
     // ˄
 
     abstract val value: Int

@@ -1,11 +1,9 @@
 package behavioralPatterns.iterator
 // ˅
-
 // ˄
 
 class BookShelf(maxsize: Int) : Aggregate {
     // ˅
-    
     // ˄
 
     var numberOfBooks: Int = 0
@@ -24,9 +22,9 @@ class BookShelf(maxsize: Int) : Aggregate {
         // ˄
     }
 
-    fun getAt(index: Int): Book? {
+    fun getAt(index: Int): Book {
         // ˅
-        return books[index]
+        return books[index]!!
         // ˄
     }
 

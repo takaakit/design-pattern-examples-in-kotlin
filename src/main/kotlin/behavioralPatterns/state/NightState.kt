@@ -45,7 +45,7 @@ object NightState : State {
     }
 
     // ˅
-
+    
     // ˄
 }
 

@@ -1,11 +1,9 @@
 package behavioralPatterns.interpreter
 // ˅
-
 // ˄
 
-class CommandList : Node() {
+class CommandList : Node {
     // ˅
-    
     // ˄
 
     private val nodes: MutableList<Node> = mutableListOf<Node>()
@@ -16,14 +14,12 @@ class CommandList : Node() {
     override fun parse(context: Context) {
         // ˅
         while (true) {
-            if (context.getToken() == null) {
+            if (context.token == null) {
                 throw Exception("Missing 'end'")
-            }
-            else if (context.getToken() == "end") {
+            } else if (context.token == "end") {
                 context.slideToken("end")
                 break
-            }
-            else {
+            } else {
                 val commandNode = Command()
                 commandNode.parse(context)
                 nodes.add(commandNode)
@@ -39,7 +35,7 @@ class CommandList : Node() {
     }
 
     // ˅
-    
+
     // ˄
 }
 

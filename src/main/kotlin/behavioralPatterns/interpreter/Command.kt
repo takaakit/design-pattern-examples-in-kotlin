@@ -1,11 +1,9 @@
 package behavioralPatterns.interpreter
 // ˅
-
 // ˄
 
-class Command : Node() {
+class Command : Node {
     // ˅
-    
     // ˄
 
     private var node: Node? = null
@@ -15,13 +13,13 @@ class Command : Node() {
 
     override fun parse(context: Context) {
         // ˅
-        when (context.getToken()) {
+        when (context.token) {
             "repeat" -> {
-                node = Repeat()
+            node = Repeat()
                 node?.parse(context)
             }
             else -> {
-                node = Action()
+            node = Action()
                 node?.parse(context)
             }
         }

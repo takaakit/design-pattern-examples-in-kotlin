@@ -1,13 +1,12 @@
 package behavioralPatterns.observer
 // ˅
-import java.util.Random
+import java.util.*
 
 // ˄
 
 // Generate a random number.
 class RandomNumber : Number() {
     // ˅
-    
     // ˄
 
     override var value: Int = 0

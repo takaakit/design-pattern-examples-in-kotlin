@@ -5,7 +5,7 @@ package creationalPatterns.singleton
 
 object Singleton {
     // ˅
-
+    
     // ˄
 
     // ˅
@@ -14,5 +14,4 @@ object Singleton {
 }
 
 // ˅
-
 // ˄

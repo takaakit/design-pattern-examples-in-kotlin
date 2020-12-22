@@ -1,10 +1,9 @@
 package behavioralPatterns.command
 // ˅
-
 // ˄
 
 // Command to paint a single point
-class PaintingCommand(paintingObject: PaintingTarget, paintingPosX: Double, paintingPosY: Double) : Command {
+class PaintingCommand(paintingTarget: PaintingTarget, paintingPosX: Double, paintingPosY: Double) : Command {
     // ˅
     
     // ˄
@@ -21,7 +20,7 @@ class PaintingCommand(paintingObject: PaintingTarget, paintingPosX: Double, pain
         
         // ˄
 
-    protected var paintingTarget: PaintingTarget = paintingObject
+    private val paintingTarget: PaintingTarget = paintingTarget
         // ˅
         
         // ˄

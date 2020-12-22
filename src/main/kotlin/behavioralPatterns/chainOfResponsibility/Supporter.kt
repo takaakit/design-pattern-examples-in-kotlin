@@ -26,11 +26,9 @@ abstract class Supporter(name: String) {
         // ˅
         if (handle(trouble)) {
             supported(trouble)
-        }
-        else if (next != null) {
+        } else if (next != null) {
             next?.support(trouble)
-        }
-        else {
+        } else {
             unsupported(trouble)
         }
         // ˄
@@ -55,14 +53,14 @@ abstract class Supporter(name: String) {
     // Trouble was supported.
     private fun supported(trouble: Trouble) {
         // ˅
-        println("${trouble.toString()} was handled by $this.")
+        println("$trouble was handled by $this.")
         // ˄
     }
 
     // Trouble was unsupported.
     private fun unsupported(trouble: Trouble) {
         // ˅
-        println("${trouble.toString()} was not handled.")
+        println("$trouble was not handled.")
         // ˄
     }
 

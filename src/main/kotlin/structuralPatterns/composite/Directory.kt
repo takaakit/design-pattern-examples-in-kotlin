@@ -1,6 +1,5 @@
 package structuralPatterns.composite
 // ˅
-
 // ˄
 
 class Directory(name: String) : FileSystemElement() {
@@ -8,14 +7,20 @@ class Directory(name: String) : FileSystemElement() {
     
     // ˄
 
-    protected override var name: String = name
+    override val name: String = name
         // ˅
         
         // ˄
 
-    protected override var size: Int = 0
+    override val size: Int
         // ˅
-        
+        get() {
+            var size = 0
+            for (element in elements) {
+                size += element.size
+            }
+            return size
+        }
         // ˄
 
     private val elements: MutableList<FileSystemElement> = mutableListOf<FileSystemElement>()
@@ -26,8 +31,8 @@ class Directory(name: String) : FileSystemElement() {
     // Print this element with the "upperPath".
     override fun print(upperPath: String) {
         // ˅
-        println(upperPath + "/" + this)
-        for (element: FileSystemElement in elements) {
+        println("$upperPath/$this")
+        for (element in elements) {
             element.print("$upperPath/$name")
         }
         // ˄

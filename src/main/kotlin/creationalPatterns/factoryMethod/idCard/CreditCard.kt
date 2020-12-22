@@ -1,10 +1,10 @@
 package creationalPatterns.factoryMethod.idCard
 // ˅
-import creationalPatterns.factoryMethod.framework.*
+import creationalPatterns.factoryMethod.framework.Product
 
 // ˄
 
-class CreditCard internal constructor(owner: String) : Product() {
+class CreditCard(owner: String) : Product {
     // ˅
     
     // ˄

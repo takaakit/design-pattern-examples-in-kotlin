@@ -32,7 +32,7 @@ class HtmlWriter(writer: Writer) {
     }
 
     // Write a link
-    fun anchor(url: String, text: String) {
+    private fun anchor(url: String, text: String) {
         // ˅
         paragraph("<a href=\"$url\">$text</a>")
         // ˄

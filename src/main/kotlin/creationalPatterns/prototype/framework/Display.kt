@@ -1,9 +1,8 @@
 package creationalPatterns.prototype.framework
 // ˅
-
 // ˄
 
-interface Display : Cloneable {
+interface Display {
 
     fun createClone(): Display
 

@@ -1,8 +1,10 @@
 package creationalPatterns.factoryMethod
 
-// Factory to make ID cards.
-
 import creationalPatterns.factoryMethod.idCard.CreditCardFactory
+
+/*
+Create documents in HTML format and text format. It is possible to create different documents in the same construction process.
+ */
 
 fun main(args: Array<String>) {
     val factory = CreditCardFactory()

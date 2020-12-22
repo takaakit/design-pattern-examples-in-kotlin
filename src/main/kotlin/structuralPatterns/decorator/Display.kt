@@ -8,24 +8,18 @@ abstract class Display {
     
     // ˄
 
+    abstract fun getLineText(row: Int): String
+
     // Column width
-    abstract val columns: Int
-        // ˅
-        
-        // ˄
+    abstract fun getColumns(): Int
 
     // Number of rows
-    abstract val rows: Int
-        // ˅
-        
-        // ˄
-
-    abstract fun getLineText(row: Int): String?
+    abstract fun getRows(): Int
 
     // Show all
     fun show() {
         // ˅
-        for (i in 0 until rows) {
+        for (i in 0 until getRows()) {
             println(getLineText(i))
         }
         // ˄

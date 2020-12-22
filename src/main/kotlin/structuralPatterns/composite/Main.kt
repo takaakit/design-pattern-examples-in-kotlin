@@ -1,33 +1,33 @@
 package structuralPatterns.composite
 
-// Represents a file system composed of files and directories.
+/*
+Represents a file system composed of files and directories. "FileSystemElement" makes it possible to treat "File" and "Directory" uniformly.
+ */
 
 fun main(args: Array<String>) {
     println("Create a file system...")
-    val rootDir: Directory = Directory("root")
-    val homeDir: Directory = Directory("home")
-    val binDir: Directory = Directory("bin")
-    val etcDir: Directory = Directory("etc")
-    val emilyDir: Directory = Directory("emily")
-    val jamesDir: Directory = Directory("james")
-    val oliviaDir: Directory = Directory("olivia")
 
-    rootDir.add(homeDir)
-    rootDir.add(binDir)
-    rootDir.add(etcDir)
+    val binDir = Directory("bin")
+    val lsFile = File("ls", 20)
+    binDir.add(lsFile)
+    val mkdirFile = File("mkdir", 40)
+    binDir.add(mkdirFile)
 
-    binDir.add(File("ls", 100))
-    binDir.add(File("mkdir", 50))
+    val emilyDir = Directory("emily")
+    val homeworkFile = File("homework.doc", 60)
+    emilyDir.add(homeworkFile)
+
+    val jamesDir = Directory("james")
+    val appFile = File("app.exe", 80)
+    jamesDir.add(appFile)
+
+    val homeDir = Directory("home")
     homeDir.add(emilyDir)
     homeDir.add(jamesDir)
-    homeDir.add(oliviaDir)
 
-    emilyDir.add(File("homework.doc", 40))
-    jamesDir.add(File("homework.doc", 50))
-    jamesDir.add(File("app.exe", 60))
-    oliviaDir.add(File("homework.doc", 70))
-    oliviaDir.add(File("app.exe", 80))
-    oliviaDir.add(File("tips.html", 90))
+    val rootDir = Directory("root")
+    rootDir.add(homeDir)
+    rootDir.add(binDir)
 
     rootDir.print("")
 }

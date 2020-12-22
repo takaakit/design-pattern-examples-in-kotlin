@@ -1,6 +1,6 @@
 package creationalPatterns.prototype
 // ˅
-import creationalPatterns.prototype.framework.*
+import creationalPatterns.prototype.framework.Display
 
 // ˄
 
@@ -16,19 +16,19 @@ class UnderlineDisplay(underlineChar: Char) : Display {
 
     override fun createClone(): Display {
         // ˅
-        return UnderlineDisplay(this.underlineChar)
+        return UnderlineDisplay(underlineChar)
         // ˄
     }
 
     override fun show(message: String) {
         // ˅
-        val length = message.toByteArray().size
+        val length = message.length
         println("\"$message\"")
         print(" ")
         for (i in 0 until length) {
             print(underlineChar)
         }
-        println("")
+        println()
         // ˄
     }
 

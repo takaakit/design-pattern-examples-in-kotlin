@@ -4,7 +4,7 @@ package behavioralPatterns.interpreter
 // ˄
 
 // A node corresponding to "program".
-class Program : Node() {
+class Program : Node {
     // ˅
     
     // ˄

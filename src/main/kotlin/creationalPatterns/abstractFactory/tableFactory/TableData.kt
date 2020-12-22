@@ -12,16 +12,16 @@ class TableData(name: String) : Data(name) {
 
     override fun toHTML(): String {
         // ˅
-        val buffer = StringBuffer()
-        buffer.append("<td><table width=\"100%\" border=\"2\">\n")
-        buffer.append("<tr><td bgcolor=\"#00CC00\" align=\"center\" colspan=\"${items.size}\"><b>$name</b></td></tr>\n")
-        buffer.append("<tr>\n")
+        val builder = StringBuilder()
+        builder.append("<td><table width=\"100%\" border=\"2\">\n")
+        builder.append("<tr><td bgcolor=\"#00CC00\" align=\"center\" colspan=\"${items.size}\"><b>$name</b></td></tr>\n")
+        builder.append("<tr>\n")
         for (item: Item in items) {
-            buffer.append(item.toHTML())
+            builder.append(item.toHTML())
         }
-        buffer.append("</tr>\n")
-        buffer.append("</table></td>\n")
-        return buffer.toString()
+        builder.append("</tr>\n")
+        builder.append("</table></td>\n")
+        return builder.toString()
         // ˄
     }
 

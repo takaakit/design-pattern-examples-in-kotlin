@@ -1,11 +1,9 @@
 package structuralPatterns.flyweight
 // ˅
-
 // ˄
 
 class LargeSizeString(string: String) {
     // ˅
-    
     // ˄
 
     private val largeSizeChars: MutableList<LargeSizeChar> = mutableListOf<LargeSizeChar>()
@@ -15,8 +13,8 @@ class LargeSizeString(string: String) {
 
     fun display() {
         // ˅
-        for (i in largeSizeChars.indices) {
-            largeSizeChars[i].display()
+        for (largeSizeChar in largeSizeChars) {
+            largeSizeChar?.display()
         }
         // ˄
     }

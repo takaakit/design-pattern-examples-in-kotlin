@@ -1,12 +1,10 @@
 package behavioralPatterns.observer
 // ˅
-
 // ˄
 
 // Display values with digits.
 class DigitObserver : Observer {
     // ˅
-    
     // ˄
 
     override fun update(number: Number) {

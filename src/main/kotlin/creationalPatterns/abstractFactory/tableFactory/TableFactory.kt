@@ -1,12 +1,14 @@
 package creationalPatterns.abstractFactory.tableFactory
 // ˅
-import creationalPatterns.abstractFactory.factory.*
+import creationalPatterns.abstractFactory.factory.Data
+import creationalPatterns.abstractFactory.factory.Factory
+import creationalPatterns.abstractFactory.factory.Link
+import creationalPatterns.abstractFactory.factory.Page
 
 // ˄
 
-class TableFactory : Factory() {
+class TableFactory : Factory {
     // ˅
-    
     // ˄
 
     override fun createPage(title: String, author: String): Page {

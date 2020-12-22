@@ -1,11 +1,10 @@
 package structuralPatterns.bridge
 // ˅
-
 // ˄
 
-class TextDisplayImpl(text: String) : DisplayImpl() {
+class TextDisplayImpl(text: String) : DisplayImpl {
     // ˅
-
+    
     // ˄
 
     // A string to display
@@ -28,7 +27,7 @@ class TextDisplayImpl(text: String) : DisplayImpl() {
 
     override fun implWrite() {
         // ˅
-        println(":$text:")                // Enclose a text with ":" and display it.
+        println(":$text:") // Enclose a text with ":" and display it.
         // ˄
     }
 
@@ -40,17 +39,17 @@ class TextDisplayImpl(text: String) : DisplayImpl() {
 
     private fun printLine() {
         // ˅
-        print("*")                          // Display "*" mark at the beginning of a frame.
-        for (i in 0 until width) {          // Display "." for the number of "width".
+        print("*") // Display "*" mark at the beginning of a frame.
+        for (i in 0 until width) {               // Display "." for the number of "width".
             print(".")
         }
-        print("*\n")                        // Display "*" mark at the end of a frame.
+        print("*\n") // Display "*" mark at the end of a frame.
         // ˄
     }
 
     // ˅
     init {
-        width = text.toByteArray().size  // Set the number of characters in bytes.
+        width = text.length // Set the number of characters in bytes.
     }
     // ˄
 }

@@ -14,7 +14,7 @@ class SpecialSupporter(name: String, targetId: Int) : Supporter(name) {
         // ˄
 
     // Troubles with the specific ID are handled.
-    protected override fun handle(trouble: Trouble): Boolean {
+    override fun handle(trouble: Trouble): Boolean {
         // ˅
         return trouble.id == targetId
         // ˄

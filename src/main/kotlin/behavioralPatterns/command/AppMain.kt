@@ -29,13 +29,12 @@ class AppMain : Application() {
     override fun start(primaryStage: Stage) {
         // ˅
         // Create buttons
-        val clearButton: Button = Button("clear")
+        val clearButton = Button("clear")
         clearButton.onMousePressed = EventHandler {
             canvas.clear()
             history.clear()
         }
-
-        val undoButton: Button = Button("undo")
+        val undoButton = Button("undo")
         undoButton.onMousePressed = EventHandler {
             canvas.clear()
             history.undo()
@@ -43,11 +42,11 @@ class AppMain : Application() {
         }
 
         // Create panes
-        val hBox: HBox = HBox(undoButton, clearButton)
-        val mainPane: StackPane = StackPane(canvas, hBox)
+        val hBox = HBox(undoButton, clearButton)
+        val mainPane = StackPane(canvas, hBox)
 
         // Create a scene
-        val scene: Scene = Scene(mainPane)
+        val scene = Scene(mainPane)
         scene.onMouseDragged = EventHandler {
             val paintingCommand = PaintingCommand(canvas, it.sceneX, it.sceneY)
             history.add(paintingCommand)
@@ -57,7 +56,7 @@ class AppMain : Application() {
         primaryStage.title = "Command Example"
         primaryStage.scene = scene
         primaryStage.onCloseRequest = EventHandler {
-            System.exit(0)
+        	System.exit(0)
         }
 
         // Show
@@ -66,7 +65,7 @@ class AppMain : Application() {
     }
 
     // ˅
-    
+
     // ˄
 }
 

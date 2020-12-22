@@ -1,12 +1,10 @@
 package behavioralPatterns.interpreter
 // ˅
-
 // ˄
 
 // A node corresponding to "forward", "left", and "right".
-class Action : Node() {
+class Action : Node {
     // ˅
-    
     // ˄
 
     private var name: String? = null
@@ -16,7 +14,7 @@ class Action : Node() {
 
     override fun parse(context: Context) {
         // ˅
-        name = context.getToken()
+        name = context.token
         context.slideToken(name)
         if (name != "forward" && name != "right" && name != "left") {
             throw Exception("$name is unknown")

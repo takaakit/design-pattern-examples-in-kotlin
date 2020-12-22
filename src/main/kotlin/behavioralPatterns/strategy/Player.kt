@@ -1,6 +1,5 @@
 package behavioralPatterns.strategy
 // ˅
-
 // ˄
 
 class Player(name: String, strategy: Strategy) {
@@ -33,35 +32,30 @@ class Player(name: String, strategy: Strategy) {
         
         // ˄
 
-    // Calculate a hand from the strategy.
-    fun nextHand(): Hand {
+    // Show a hand signal from the strategy.
+    fun showHandSignal(): HandSignal {
         // ˅
-        return strategy.nextHand()
+        return strategy.showHandSignal()
         // ˄
     }
 
-    // Won a game.
-    fun won() {
+    // Notify a game result.
+    fun notifyGameResult(result: GameResultType, ownHand: HandSignal, opponentsHand: HandSignal) {
         // ˅
-        strategy.learn(true)
-        winCount++
-        gameCount++
-        // ˄
-    }
-
-    // Lost a game.
-    fun lost() {
-        // ˅
-        strategy.learn(false)
-        lossCount++
-        gameCount++
-        // ˄
-    }
-
-    // Drew a game.
-    fun drew() {
-        // ˅
-        gameCount++
+        when (result) {
+            GameResultType.Win -> {
+                winCount++
+                gameCount++
+            }
+            GameResultType.Loss -> {
+                lossCount++
+                gameCount++
+            }
+            GameResultType.Draw -> {
+                gameCount++
+            }
+        }
+        strategy.notifyGameResult(result, ownHand, opponentsHand)
         // ˄
     }
 

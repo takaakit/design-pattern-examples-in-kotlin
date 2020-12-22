@@ -1,6 +1,5 @@
 package structuralPatterns.bridge
 // ˅
-
 // ˄
 
 open class Display(impl: DisplayImpl) {
@@ -13,7 +12,7 @@ open class Display(impl: DisplayImpl) {
         
         // ˄
 
-    fun display() {
+    fun output() {
         // ˅
         open()
         write()

@@ -1,16 +1,12 @@
 package behavioralPatterns.visitor
 // ˅
-
 // ˄
 
-abstract class Visitor {
-    // ˅
-    
-    // ˄
+interface Visitor {
 
-    abstract fun visit(file: File)
+    fun visit(file: File)
 
-    abstract fun visit(directory: Directory)
+    fun visit(directory: Directory)
 
     // ˅
     

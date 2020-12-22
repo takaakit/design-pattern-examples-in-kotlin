@@ -1,6 +1,5 @@
 package behavioralPatterns.visitor
 // ˅
-
 // ˄
 
 class Directory(name: String) : FileSystemElement() {
@@ -18,7 +17,7 @@ class Directory(name: String) : FileSystemElement() {
         // ˅
         get() {
             var size = 0
-            for (element: FileSystemElement in elements) {
+            for (element in elements) {
                 size += element.size
             }
             return size
@@ -47,7 +46,7 @@ class Directory(name: String) : FileSystemElement() {
     }
 
     // Create a iterator
-    fun iterator(): Iterator<FileSystemElement> {
+    operator fun iterator(): Iterator<FileSystemElement> {
         // ˅
         return elements.iterator()
         // ˄

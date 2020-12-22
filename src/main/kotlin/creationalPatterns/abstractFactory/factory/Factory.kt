@@ -1,25 +1,17 @@
 package creationalPatterns.abstractFactory.factory
 // ˅
-
 // ˄
 
-abstract class Factory {
+interface Factory {
+
+    fun createPage(title: String, author: String): Page
+
+    fun createLink(name: String, url: String): Link
+
+    fun createData(name: String): Data
+
     // ˅
     
-    // ˄
-
-    abstract fun createPage(title: String, author: String): Page
-
-    abstract fun createLink(name: String, url: String): Link
-
-    abstract fun createData(name: String): Data
-
-    // ˅
-    companion object {
-        fun getFactory(classname: String): Factory {
-            return Class.forName(classname).newInstance() as Factory
-        }
-    }
     // ˄
 }
 

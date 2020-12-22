@@ -11,7 +11,7 @@ class HistoryCommand : Command {
     // ˄
 
     // A set of past commands
-    private val pastCommands: Stack<Command> = Stack<Command>()
+    private val pastCommands: Stack<Command> = Stack()
         // ˅
         
         // ˄
@@ -33,7 +33,7 @@ class HistoryCommand : Command {
     // Delete the last command
     fun undo() {
         // ˅
-        if (!pastCommands.empty()) {
+        if (!pastCommands.isEmpty()) {
             pastCommands.pop()
         }
         // ˄
@@ -47,7 +47,7 @@ class HistoryCommand : Command {
     }
 
     // ˅
-    
+
     // ˄
 }
 

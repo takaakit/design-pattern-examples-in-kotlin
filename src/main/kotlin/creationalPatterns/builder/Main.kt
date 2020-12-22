@@ -1,31 +1,32 @@
 package creationalPatterns.builder
 
-// Create documents in HTML format and text format.
+import java.io.File
+import java.util.*
+
+/*
+Create documents in HTML format and text format. It is possible to create different documents in the same construction process.
+ */
 
 fun main(args: Array<String>) {
-    if (args.size != 1) {
-        showUsage()
-    }
-    else if (args[0] == "plain") {
-        val plainTextBuilder: PlainTextBuilder = PlainTextBuilder()
-        val director: Director = Director(plainTextBuilder)
+    println("Please enter \"plain\" or \"html\":")
+    val scan = Scanner(System.`in`)
+    val inputValue = scan.next()
+
+    if (inputValue == "plain") {
+        val plainTextBuilder = PlainTextBuilder()
+        val director = Director(plainTextBuilder)
         director.build()
         val content = plainTextBuilder.result
         println(content)
-    }
-    else if (args[0] == "html") {
-        val htmlBuilder: HTMLBuilder = HTMLBuilder()
-        val director: Director = Director(htmlBuilder)
+    } else if (inputValue == "html") {
+        val htmlBuilder = HTMLBuilder()
+        val director = Director(htmlBuilder)
         director.build()
-        val filename = htmlBuilder.result
-        println("$filename has been created.")
+        val fileName = htmlBuilder.result
+        println("$fileName has been created.")
+        println("Output File: ${File(File(".").absoluteFile.parent, fileName).path}")
+    } else {
+        System.err.println("The value is not \"plain\" or \"html\".")
+        System.exit(-1)
     }
-    else {
-        showUsage()
-    }
-}
-
-fun showUsage() {
-    println("Usage 1: java Main plain      <- Create a document in plain text.")
-    println("Usage 2: java Main html       <- Create a document in HTML.")
 }

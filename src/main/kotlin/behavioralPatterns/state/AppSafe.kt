@@ -4,9 +4,10 @@ import javafx.application.Application
 import javafx.event.EventHandler
 import javafx.geometry.Pos
 import javafx.scene.Scene
-import javafx.scene.control.TextField
-import javafx.scene.control.TextArea
 import javafx.scene.control.Button
+import javafx.scene.control.TextArea
+import javafx.scene.control.TextField
+import javafx.scene.input.MouseEvent
 import javafx.scene.layout.HBox
 import javafx.scene.layout.Pane
 import javafx.scene.layout.VBox
@@ -15,10 +16,17 @@ import kotlin.concurrent.thread
 
 // ˄
 
-class AppSafe : Context, Application() {
+// Safe security system that the security status changes with time.
+class AppSafe : Application(), Context {
     // ˅
     
     // ˄
+
+    // Current state
+    private var state: State = DaytimeState
+        // ˅
+        
+        // ˄
 
     // Current time
     private var textTime: TextField? = null
@@ -32,45 +40,37 @@ class AppSafe : Context, Application() {
         
         // ˄
 
-    // Current state
-    private var state: State = DaytimeState
-        // ˅
-        
-        // ˄
-
     override fun start(primaryStage: Stage) {
         // ˅
-
         textTime = TextField("")
         textMessage = TextArea("")
-
-        val buttonUse: Button = Button("Use a safe")
+        val buttonUse = Button("Use a safe")
         buttonUse.onMouseClicked = EventHandler {
-            state.useSafe(this)      // Safe use button pressed
+            state.useSafe(this) // Safe use button pressed
         }
 
-        val buttonAlarm: Button = Button("Sound an emergency bell")
+        val buttonAlarm = Button("Sound an emergency bell")
         buttonAlarm.onMouseClicked = EventHandler {
-            state.soundBell(this)   // Emergency bell button pressed
+            state.soundBell(this) // Emergency bell button pressed
         }
-
-        val buttonPhone: Button = Button("Make a call")
+        
+        val buttonPhone = Button("Make a call")
         buttonPhone.onMouseClicked = EventHandler {
-            state.call(this)        // Normal call button pressed
+            state.call(this) // Normal call button pressed
         }
-
-        val buttonExit: Button = Button("Exit")
+        
+        val buttonExit = Button("Exit")
         buttonExit.onMouseClicked = EventHandler {
-            System.exit(0)          // Exit button pressed
+            System.exit(0) // Exit button pressed
         }
-
-        val topPane: Pane = Pane(textTime)
-        val centerScreen: Pane = Pane(textMessage)
-        val bottomPane: HBox = HBox(buttonUse, buttonAlarm, buttonPhone, buttonExit)
+        
+        val topPane = Pane(textTime)
+        val centerScreen = Pane(textMessage)
+        val bottomPane = HBox(buttonUse, buttonAlarm, buttonPhone, buttonExit)
         bottomPane.alignment = Pos.BOTTOM_CENTER
-        val mainPane: VBox = VBox(topPane, centerScreen, bottomPane)
+        val mainPane = VBox(topPane, centerScreen, bottomPane)
 
-        val scene: Scene = Scene(mainPane)
+        val scene = Scene(mainPane)
         primaryStage.scene = scene
         primaryStage.title = "State Example"
         primaryStage.onCloseRequest = EventHandler {
@@ -85,15 +85,14 @@ class AppSafe : Context, Application() {
     // Set time
     override fun setTime(hour: Int) {
         // ˅
-        var clockstring = "Current Time : "
-        if (hour < 10) {
-            clockstring += "0${hour.toString()}:00"
+        var currentTime = "Current Time : "
+        currentTime += if (hour < 10) {
+            "0$hour:00"
+        } else {
+            "$hour:00"
         }
-        else {
-            clockstring += "${hour.toString()}:00"
-        }
-        println(clockstring)
-        textTime?.text = clockstring
+        println(currentTime)
+        textTime?.text = currentTime
         state.setTime(this, hour)
         // ˄
     }
@@ -101,7 +100,7 @@ class AppSafe : Context, Application() {
     // Change state
     override fun changeState(state: State) {
         // ˅
-        println("The state changed from ${this.state.toString()} to $state.")
+        println("The state changed from " + this.state + " to " + state + ".")
         this.state = state
         // ˄
     }
@@ -125,8 +124,12 @@ class AppSafe : Context, Application() {
         thread {
             while (true) {
                 for (hour in 0..23) {
-                    setTime(hour)   // Set the time
-                    Thread.sleep(1000)
+                    setTime(hour) // Set the time
+                    try {
+                        Thread.sleep(1000)
+                    } catch (e: InterruptedException) {
+                        e.printStackTrace()
+                    }
                 }
             }
         }

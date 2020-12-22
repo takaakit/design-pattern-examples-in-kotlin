@@ -1,16 +1,15 @@
 package structuralPatterns.proxy
 // ˅
-
 // ˄
 
-class RealPrinter(name: String) : Printer {
+class RealPrinter(printerName: String) : Printer {
     // ˅
     init {
-        heavyTask("Creating an instance($name) of the Printer")
+        heavyTask("Creating an instance($printerName) of the Printer")
     }
     // ˄
 
-    var printerName: String = name
+    var printerName: String = printerName
         // ˅
         
         // ˄
@@ -18,8 +17,10 @@ class RealPrinter(name: String) : Printer {
     // Display a content with the name
     override fun output(content: String) {
         // ˅
-        println("=== $printerName ===")
+        println("==========")
         println(content)
+        println("Printed by $printerName")
+        println("==========")
         // ˄
     }
 
@@ -27,7 +28,7 @@ class RealPrinter(name: String) : Printer {
     private fun heavyTask(message: String) {
         // ˅
         print(message)
-        for (i in 0..10) {
+        for (i in 0..9) {
             Thread.sleep(500)
             print(".")
         }
@@ -36,7 +37,7 @@ class RealPrinter(name: String) : Printer {
     }
 
     // ˅
-
+    
     // ˄
 }
 

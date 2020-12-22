@@ -7,12 +7,11 @@ import creationalPatterns.factoryMethod.framework.Product
 
 class CreditCardFactory : Factory() {
     // ˅
-    
     // ˄
 
     private val cardOwners: MutableList<String> = mutableListOf<String>()
         // ˅
-        
+
         // ˄
 
     override fun createProduct(owner: String): Product {
@@ -24,12 +23,6 @@ class CreditCardFactory : Factory() {
     override fun registerProduct(product: Product) {
         // ˅
         cardOwners.add((product as CreditCard).owner)
-        // ˄
-    }
-
-    fun getCardOwner(): MutableList<String> {
-        // ˅
-        return cardOwners
         // ˄
     }
 

@@ -1,11 +1,9 @@
 package creationalPatterns.prototype.framework
 // ˅
-
 // ˄
 
 class Manager {
     // ˅
-    
     // ˄
 
     private val display: MutableMap<String, Display> = mutableMapOf<String, Display>()
@@ -15,14 +13,14 @@ class Manager {
 
     fun registerDisplay(displayName: String, display: Display) {
         // ˅
-        this.display.put(displayName, display)
+        this.display[displayName] = display
         // ˄
     }
 
-    fun getDisplay(displayName: String): Display? {
+    fun getDisplay(displayName: String): Display {
         // ˅
-        val d: Display = display.get(displayName) as Display
-        return d.createClone()
+        val d = display[displayName]
+        return d!!.createClone()
         // ˄
     }
 

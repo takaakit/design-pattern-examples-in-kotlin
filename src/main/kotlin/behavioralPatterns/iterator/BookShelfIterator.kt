@@ -1,11 +1,9 @@
 package behavioralPatterns.iterator
 // ˅
-
 // ˄
 
 class BookShelfIterator(bookShelf: BookShelf) : Iterator {
     // ˅
-    
     // ˄
 
     private var index: Int = 0
@@ -24,7 +22,7 @@ class BookShelfIterator(bookShelf: BookShelf) : Iterator {
         // ˄
     }
 
-    override fun next(): Any? {
+    override fun next(): Any {
         // ˅
         val book = bookShelf.getAt(index)
         index++
@@ -33,7 +31,7 @@ class BookShelfIterator(bookShelf: BookShelf) : Iterator {
     }
 
     // ˅
-
+    
     // ˄
 }
 

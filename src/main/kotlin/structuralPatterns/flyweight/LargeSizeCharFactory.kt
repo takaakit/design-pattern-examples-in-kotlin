@@ -1,6 +1,5 @@
 package structuralPatterns.flyweight
 // ˅
-
 // ˄
 
 object LargeSizeCharFactory {
@@ -16,17 +15,17 @@ object LargeSizeCharFactory {
     // Create an instance of the large size character.
     fun getLargeSizeChar(charName: Char): LargeSizeChar {
         // ˅
-        var lsc: LargeSizeChar? = poolChars.get(charName.toString())
+        var lsc = poolChars.get(charName.toString())
         if (lsc == null) {
-            lsc = LargeSizeChar(charName)            // Create an instance
-            poolChars.put(charName.toString(), lsc)
+            lsc = LargeSizeChar(charName) // Create an instance
+            poolChars[charName.toString()] = lsc
         }
         return lsc
         // ˄
     }
 
     // ˅
-
+    
     // ˄
 }
 

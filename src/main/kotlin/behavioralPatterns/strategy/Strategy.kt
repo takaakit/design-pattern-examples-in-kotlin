@@ -5,9 +5,11 @@ package behavioralPatterns.strategy
 
 interface Strategy {
 
-    fun nextHand(): Hand
+    // Show a hand signal.
+    fun showHandSignal(): HandSignal
 
-    fun learn(win: Boolean)
+    // Notify a game result.
+    fun notifyGameResult(result: GameResultType, ownHand: HandSignal, opponentsHand: HandSignal)
 
     // ˅
     

@@ -14,7 +14,7 @@ class LimitedSupporter(name: String, limitId: Int) : Supporter(name) {
         // ˄
 
     // Troubles with an ID below the limit are handled.
-    protected override fun handle(trouble: Trouble): Boolean {
+    override fun handle(trouble: Trouble): Boolean {
         // ˅
         return trouble.id <= limitId
         // ˄

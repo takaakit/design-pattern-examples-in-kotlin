@@ -1,20 +1,16 @@
 package creationalPatterns.builder
 // ˅
-
 // ˄
 
-abstract class Builder {
-    // ˅
-    
-    // ˄
+interface Builder {
 
-    abstract fun createTitle(title: String)
+    fun createTitle(title: String)
 
-    abstract fun createSection(section: String)
+    fun createSection(section: String)
 
-    abstract fun createItems(items: Array<String>)
+    fun createItems(items: Array<String>)
 
-    abstract fun close()
+    fun close()
 
     // ˅
     

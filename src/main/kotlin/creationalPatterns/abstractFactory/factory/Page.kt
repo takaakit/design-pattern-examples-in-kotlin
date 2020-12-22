@@ -1,6 +1,9 @@
 package creationalPatterns.abstractFactory.factory
 // ˅
+import java.io.File
 import java.io.FileWriter
+import java.io.IOException
+import java.util.*
 
 // ˄
 
@@ -35,10 +38,9 @@ abstract class Page(title: String, author: String) {
     fun output() {
         // ˅
         val fileName = "$title.html"
-        val writer = FileWriter(fileName)
-        writer.write(this.toHTML())
-        writer.close()
+        FileWriter(fileName).use { writer -> writer.write(toHTML()) }
         println("$fileName has been created.")
+        println("Output File: ${File(File(".").absoluteFile.parent, fileName).path}")
         // ˄
     }
 

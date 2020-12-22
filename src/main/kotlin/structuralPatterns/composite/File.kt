@@ -1,6 +1,5 @@
 package structuralPatterns.composite
 // ˅
-
 // ˄
 
 class File(name: String, size: Int) : FileSystemElement() {
@@ -8,12 +7,12 @@ class File(name: String, size: Int) : FileSystemElement() {
     
     // ˄
 
-    protected override var name: String = name
+    override val name: String = name
         // ˅
         
         // ˄
 
-    protected override var size: Int = size
+    override val size: Int = size
         // ˅
         
         // ˄

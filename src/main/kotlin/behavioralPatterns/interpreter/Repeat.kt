@@ -1,12 +1,10 @@
 package behavioralPatterns.interpreter
 // ˅
-
 // ˄
 
 // A node corresponding to "repeat".
-class Repeat : Node() {
+class Repeat : Node {
     // ˅
-    
     // ˄
 
     private var number: Int = 0
@@ -22,7 +20,7 @@ class Repeat : Node() {
     override fun parse(context: Context) {
         // ˅
         context.slideToken("repeat")
-        number = context.getNumber()
+        number = context.number
         context.nextToken()
         commandList = CommandList()
         commandList?.parse(context)
@@ -31,7 +29,7 @@ class Repeat : Node() {
 
     override fun toString(): String {
         // ˅
-        return "[repeat $number $commandList]"
+        return "repeat $number $commandList"
         // ˄
     }
 

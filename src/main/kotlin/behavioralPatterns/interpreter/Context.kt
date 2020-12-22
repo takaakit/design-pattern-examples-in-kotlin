@@ -1,63 +1,52 @@
 package behavioralPatterns.interpreter
 // ˅
-import java.util.StringTokenizer
-
+import java.util.*
 // ˄
 
 // Analyze the syntax
 class Context(text: String) {
     // ˅
-    
     // ˄
 
     private val tokenizer: StringTokenizer
         // ˅
-        
         // ˄
 
-    private var currentToken: String? = null
+    var token: String? = null
         // ˅
-        
+        private set
+        // ˄
+
+    val number: Int
+        // ˅
+        get() {
+            val number: Int
+            number = try {
+                token!!.toInt()
+            } catch (e: NumberFormatException) {
+                throw Exception("WARNING: $e")
+            }
+            return number
+        }
         // ˄
 
     fun nextToken(): String? {
         // ˅
         if (tokenizer.hasMoreTokens()) {
-            currentToken = tokenizer.nextToken()
+            token = tokenizer.nextToken()
+        } else {
+            token = null
         }
-        else {
-            currentToken = null
-        }
-        return currentToken
-        // ˄
-    }
-
-    fun getToken(): String? {
-        // ˅
-        return currentToken
+        return token
         // ˄
     }
 
     fun slideToken(token: String?) {
         // ˅
-        if (token != currentToken) {
-            throw Exception("WARNING: $token is expected but $currentToken was found.")
+        if (token != this.token) {
+            throw Exception("WARNING: " + token + " is expected but " + this.token + " was found.")
         }
         nextToken()
-        // ˄
-    }
-
-    fun getNumber(): Int {
-        // ˅
-        var number = 0
-        try {
-            number = Integer.parseInt(currentToken!!)
-        }
-        catch (e: NumberFormatException) {
-            throw Exception("WARNING: $e")
-        }
-
-        return number
         // ˄
     }
 

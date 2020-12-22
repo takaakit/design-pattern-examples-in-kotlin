@@ -1,18 +1,14 @@
 package structuralPatterns.bridge
 // ˅
-
 // ˄
 
-abstract class DisplayImpl {
-    // ˅
-    
-    // ˄
+interface DisplayImpl {
 
-    abstract fun implOpen()
+    fun implOpen()
 
-    abstract fun implWrite()
+    fun implWrite()
 
-    abstract fun implClose()
+    fun implClose()
 
     // ˅
     

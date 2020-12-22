@@ -1,22 +1,22 @@
 package behavioralPatterns.mediator
 // ˅
 import javafx.application.Application
+import javafx.event.EventHandler
 import javafx.geometry.Insets
 import javafx.geometry.Pos
-import javafx.stage.Stage
 import javafx.scene.Scene
+import javafx.scene.control.Label
+import javafx.scene.control.ToggleGroup
 import javafx.scene.layout.GridPane
 import javafx.scene.layout.HBox
 import javafx.scene.layout.VBox
-import javafx.scene.control.Label
-import javafx.scene.control.ToggleGroup
-import javafx.event.EventHandler
+import javafx.stage.Stage
+import javafx.stage.WindowEvent
 
 // ˄
 
-class AppLogin : Mediator, Application() {
+class AppLogin : Application(), Mediator {
     // ˅
-    
     // ˄
 
     private var radioLogin: ColleagueRadioButton? = null
@@ -53,40 +53,36 @@ class AppLogin : Mediator, Application() {
         // ˅
         // Create TextField, Button and RadioButton
         createColleagues()
-
-        val groupt: ToggleGroup = ToggleGroup()
-        radioGuest?.setToggleGroup(groupt)
-        radioLogin?.setToggleGroup(groupt)
+        val toggleGroup = ToggleGroup()
+        radioGuest?.toggleGroup = toggleGroup
+        radioLogin?.toggleGroup = toggleGroup
 
         // Set a initial state
-        radioGuest?.setSelected(true)
+        radioGuest?.isSelected = true
         textUsername?.setActivation(false)
         textPassword?.setActivation(false)
-        buttonOk?.setActivation(false)
+        buttonOk?.setActivation(true)
         buttonCancel?.setActivation(true)
 
         // Create panes
-        val checkBoxPane: HBox = HBox(radioGuest, radioLogin)
+        val checkBoxPane = HBox(radioGuest, radioLogin)
         checkBoxPane.spacing = 5.0
-
-        val textFieldPane: GridPane = GridPane()
+        val textFieldPane = GridPane()
         textFieldPane.hgap = 5.0
         textFieldPane.vgap = 2.0
         textFieldPane.add(Label("Username:"), 0, 0)
         textFieldPane.add(textUsername, 1, 0)
         textFieldPane.add(Label("Password:"), 0, 1)
         textFieldPane.add(textPassword, 1, 1)
-
-        val bottomPane: HBox = HBox(buttonOk, buttonCancel)
+        val bottomPane = HBox(buttonOk, buttonCancel)
         bottomPane.spacing = 5.0
         bottomPane.alignment = Pos.CENTER_RIGHT
-
-        val mainPane: VBox = VBox(checkBoxPane, textFieldPane, bottomPane)
+        val mainPane = VBox(checkBoxPane, textFieldPane, bottomPane)
         mainPane.spacing = 5.0
         mainPane.padding = Insets(5.0, 5.0, 5.0, 5.0)
 
         // Create a scene
-        val scene: Scene = Scene(mainPane)
+        val scene = Scene(mainPane)
         primaryStage.scene = scene
         primaryStage.title = "Mediator Example"
         primaryStage.onCloseRequest = EventHandler {
@@ -94,12 +90,12 @@ class AppLogin : Mediator, Application() {
         }
 
         // Set mediators
-        radioGuest?.mediator = this
-        radioLogin?.mediator = this
-        textUsername?.mediator = this
-        textPassword?.mediator = this
-        buttonOk?.mediator = this
-        buttonCancel?.mediator = this
+        radioGuest?.setMediator(this)
+        radioLogin?.setMediator(this)
+        textUsername?.setMediator(this)
+        textPassword?.setMediator(this)
+        buttonOk?.setMediator(this)
+        buttonCancel?.setMediator(this)
 
         // Show
         primaryStage.show()
@@ -120,26 +116,23 @@ class AppLogin : Mediator, Application() {
     // Change enable/disable of the Colleagues when notified from the Mediators.
     override fun colleagueChanged() {
         // ˅
-        if (buttonOk?.isPressed == true ?: false
-                || buttonCancel?.isPressed == true ?: false) {
+        if (buttonOk?.isPressed == true
+                || buttonCancel?.isPressed == true) {
             System.exit(0)
-        }
-        else {
+        } else {
             if (radioGuest?.isSelected == true) {    // Guest mode
                 textUsername?.setActivation(false)
                 textPassword?.setActivation(false)
                 buttonOk?.setActivation(true)
-            }
-            else {                                  // Login mode
+            } else {                                  // Login mode
                 textUsername?.setActivation(true)
                 textPassword?.setActivation(true)
 
-                // Judge whether the changed Colleage is enabled or disabled
-                if (textUsername?.getText() != "" ?: false
-                        && textPassword?.getText() != "" ?: false) {
+                // Judge whether the changed Colleague is enabled or disabled
+                if (textUsername?.text?.isEmpty() == false
+                        && textPassword?.text?.isEmpty() == false) {
                     buttonOk?.setActivation(true)
-                }
-                else {
+                } else {
                     buttonOk?.setActivation(false)
                 }
             }
@@ -148,7 +141,7 @@ class AppLogin : Mediator, Application() {
     }
 
     // ˅
-
+    
     // ˄
 }
 

@@ -1,11 +1,9 @@
 package behavioralPatterns.visitor
 // ˅
-
 // ˄
 
-class ListVisitor : Visitor() {
+class ListVisitor : Visitor {
     // ˅
-    
     // ˄
 
     // Currently visited directory

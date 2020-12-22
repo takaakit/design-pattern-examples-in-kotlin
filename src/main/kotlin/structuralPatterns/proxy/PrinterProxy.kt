@@ -1,14 +1,13 @@
 package structuralPatterns.proxy
 // ˅
-
 // ˄
 
-class PrinterProxy(name: String) : Printer {
+class PrinterProxy(currentName: String) : Printer {
     // ˅
-
+    
     // ˄
 
-    private var currentName: String = name
+    private var currentName: String = currentName
         // ˅
         
         // ˄
@@ -18,7 +17,7 @@ class PrinterProxy(name: String) : Printer {
         get() = currentName
         set(value) {
             real?.printerName = value
-            this.currentName = value
+            currentName = value
         }
         // ˄
 
@@ -45,7 +44,7 @@ class PrinterProxy(name: String) : Printer {
     }
 
     // ˅
-
+    
     // ˄
 }
 

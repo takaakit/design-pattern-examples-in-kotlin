@@ -1,14 +1,10 @@
 package creationalPatterns.factoryMethod.framework
 // ˅
-
 // ˄
 
-abstract class Product {
-    // ˅
-    
-    // ˄
+interface Product {
 
-    abstract fun use()
+    fun use()
 
     // ˅
     

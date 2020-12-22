@@ -1,15 +1,11 @@
 package behavioralPatterns.interpreter
 // ˅
-
 // ˄
 
 // Node in the syntax tree.
-abstract class Node {
-    // ˅
-    
-    // ˄
+interface Node {
 
-    abstract fun parse(context: Context)
+    fun parse(context: Context)
 
     // ˅
     
@@ -17,5 +13,4 @@ abstract class Node {
 }
 
 // ˅
-
 // ˄

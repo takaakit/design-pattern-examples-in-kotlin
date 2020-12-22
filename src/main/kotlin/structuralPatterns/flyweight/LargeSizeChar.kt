@@ -3,18 +3,13 @@ package structuralPatterns.flyweight
 import java.io.BufferedReader
 import java.io.FileReader
 import java.io.IOException
+import java.lang.StringBuilder
 
 // ˄
 
 class LargeSizeChar(charName: Char) {
     // ˅
-    
     // ˄
-
-    private val charName: Char = charName
-        // ˅
-        
-        // ˄
 
     // Display data of the large size character
     private var displayData: String? = null
@@ -34,16 +29,16 @@ class LargeSizeChar(charName: Char) {
         try {
             val reader = BufferedReader(FileReader("src/main/kotlin/structuralPatterns/Flyweight/big$charName.txt"))
             var line: String? = ""
-            val buf = StringBuffer()
+            val builder = StringBuilder()
             while ({line = reader.readLine(); line}() != null) {
-                buf.append(line)
-                buf.append("\n")
+                builder.append(line)
+                builder.append("\n")
             }
             reader.close()
-            displayData = buf.toString()
+            displayData = builder.toString()
         }
         catch (e: IOException) {
-            displayData = "$charName?"
+            displayData = "$charName?\n"
         }
     }
     // ˄
