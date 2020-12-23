@@ -10,5 +10,5 @@ fun main(args: Array<String>) {
 
     val d2 = MultiLineDisplay(TextDisplayImpl("The United States of America"))
     d2.output()
-    d2.displayMultiple(3)
+    d2.outputMultiple(3)
 }

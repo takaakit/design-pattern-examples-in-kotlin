@@ -13,6 +13,7 @@ class Directory(name: String) : FileSystemElement() {
         
         // ˄
 
+    // Directory size
     override val size: Int
         // ˅
         get() {

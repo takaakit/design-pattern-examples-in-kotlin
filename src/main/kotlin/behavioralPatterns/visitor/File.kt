@@ -14,6 +14,7 @@ class File(name: String, size: Int) : FileSystemElement() {
         
         // ˄
 
+    // File size
     override val size: Int = size
         // ˅
         
