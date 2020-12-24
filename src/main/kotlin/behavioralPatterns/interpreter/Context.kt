@@ -4,7 +4,7 @@ import java.util.*
 // ˄
 
 // Analyze the syntax
-class Context(text: String) {
+class Context(line: String) {
     // ˅
     // ˄
 
@@ -52,7 +52,7 @@ class Context(text: String) {
 
     // ˅
     init {
-        tokenizer = StringTokenizer(text)
+        tokenizer = StringTokenizer(line)
         nextToken()
     }
     // ˄

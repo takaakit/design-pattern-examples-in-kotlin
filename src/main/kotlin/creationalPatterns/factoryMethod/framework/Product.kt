@@ -1,5 +1,6 @@
 package creationalPatterns.factoryMethod.framework
 // ˅
+
 // ˄
 
 interface Product {

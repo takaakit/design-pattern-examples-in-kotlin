@@ -44,19 +44,19 @@ class AppSafe : Application(), Context {
         // ˅
         textTime = TextField("")
         textMessage = TextArea("")
-        val buttonUse = Button("Use a safe")
+        val buttonUse = Button("Use")
         buttonUse.onMouseClicked = EventHandler {
-            state.useSafe(this) // Safe use button pressed
+            state.useSafe(this) // Use button pressed
         }
 
-        val buttonAlarm = Button("Sound an emergency bell")
+        val buttonAlarm = Button("Alarm")
         buttonAlarm.onMouseClicked = EventHandler {
-            state.soundBell(this) // Emergency bell button pressed
+            state.soundBell(this) // Alarm button pressed
         }
         
-        val buttonPhone = Button("Make a call")
+        val buttonPhone = Button("Phone")
         buttonPhone.onMouseClicked = EventHandler {
-            state.call(this) // Normal call button pressed
+            state.call(this) // Phone button pressed
         }
         
         val buttonExit = Button("Exit")
