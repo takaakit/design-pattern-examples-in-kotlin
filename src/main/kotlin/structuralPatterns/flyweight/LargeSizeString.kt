@@ -14,7 +14,7 @@ class LargeSizeString(string: String) {
     fun display() {
         // ˅
         for (largeSizeChar in largeSizeChars) {
-            largeSizeChar?.display()
+            largeSizeChar.display()
         }
         // ˄
     }

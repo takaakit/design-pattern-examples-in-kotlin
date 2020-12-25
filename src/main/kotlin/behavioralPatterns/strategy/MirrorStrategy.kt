@@ -1,6 +1,5 @@
 package behavioralPatterns.strategy
 // ˅
-import behavioralPatterns.strategy.HandSignal
 
 // ˄
 
@@ -10,7 +9,7 @@ class MirrorStrategy : Strategy {
     
     // ˄
 
-    private var preOpponentsHand: HandSignal = HandSignal.getHand(HandSignal.ROCK)
+    private var preOpponentsHand: HandSignal = HandSignal.Constant.getHand(HandSignal.Constant.ROCK)
         // ˅
         
         // ˄

@@ -27,7 +27,7 @@ class ListVisitor : Visitor {
         currentDirectory = currentDirectory + "/" + directory.name
         val it = directory.iterator()
         while (it.hasNext()) {
-            val element = it.next() as FileSystemElement
+            val element = it.next()
             element.accept(this)
         }
         currentDirectory = visitedDirectory

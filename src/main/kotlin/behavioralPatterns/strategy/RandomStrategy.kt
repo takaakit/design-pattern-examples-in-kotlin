@@ -16,7 +16,7 @@ class RandomStrategy : Strategy {
 
     override fun showHandSignal(): HandSignal {
         // ˅
-        return HandSignal.getHand(random.nextInt(3))
+        return HandSignal.Constant.getHand(random.nextInt(3))
         // ˄
     }
 

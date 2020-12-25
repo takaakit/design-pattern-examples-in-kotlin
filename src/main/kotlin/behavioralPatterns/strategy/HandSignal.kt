@@ -1,6 +1,5 @@
 package behavioralPatterns.strategy
 // ˅
-import java.util.*
 
 // ˄
 
@@ -8,6 +7,53 @@ class HandSignal(value: Int) {
     // ˅
     
     // ˄
+
+    object Constant {
+        // ˅
+        
+        // ˄
+
+        // Rock
+        const val ROCK: Int = 0
+            // ˅
+            
+            // ˄
+
+        // Scissors
+        const val SCISSORS: Int = 1
+            // ˅
+            
+            // ˄
+
+        // Paper
+        const val PAPER: Int = 2
+            // ˅
+            
+            // ˄
+
+        // Hands of rock-scissors-paper
+        var handSignals: Array<HandSignal> = arrayOf(HandSignal(ROCK), HandSignal(SCISSORS), HandSignal(PAPER))
+            // ˅
+            
+            // ˄
+
+        // Characters of the hands
+        val name: Array<String> = arrayOf("Rock", "Scissors", "Paper")
+            // ˅
+            
+            // ˄
+
+        // Get an instance of the hand
+        fun getHand(handValue: Int): HandSignal {
+            // ˅
+            return handSignals[handValue]
+            // ˄
+        }
+
+        // ˅
+        
+        // ˄
+    }
 
     // Values of rock, scissors and paper.
     val value: Int = value
@@ -31,7 +77,7 @@ class HandSignal(value: Int) {
 
     override fun toString(): String {
         // ˅
-        return name[value]
+        return Constant.name[value]
         // ˄
     }
 
@@ -49,27 +95,7 @@ class HandSignal(value: Int) {
     }
 
     // ˅
-    companion object {
-        // Rock
-        const val ROCK = 0
 
-        // Scissors
-        const val SCISSORS = 1
-
-        // Paper
-        const val PAPER = 2
-
-        // Hands of rock-scissors-paper
-        private val handSignals = Arrays.asList(HandSignal(ROCK), HandSignal(SCISSORS), HandSignal(PAPER))
-
-        // Characters of the hands
-        private val name = Arrays.asList("Rock", "Scissors", "Paper")
-
-        // Get an instance of the hand
-        fun getHand(handValue: Int): HandSignal {
-            return handSignals[handValue]
-        }
-    }
     // ˄
 }
 

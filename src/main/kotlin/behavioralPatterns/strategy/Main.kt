@@ -1,12 +1,12 @@
 package behavioralPatterns.strategy
 
+import behavioralPatterns.strategy.GameResultType.*
+
 /*
 A game of rock-scissors-paper. Two strategies are available:
 * Random Strategy: showing a random hand signal.
 * Mirror Strategy: showing a hand signal from the previous opponent's hand signal.
  */
-
-import behavioralPatterns.strategy.GameResultType.*
 
 fun main(args: Array<String>) {
     val player1 = Player("Emily", RandomStrategy())
