@@ -2,15 +2,10 @@ package structuralPatterns.proxy
 // ˅
 // ˄
 
-class PrinterProxy(currentName: String) : Printer {
+class PrinterProxy(printerName: String) : Printer {
     // ˅
     
     // ˄
-
-    private var currentName: String = currentName
-        // ˅
-        
-        // ˄
 
     var printerName: String
         // ˅
@@ -21,6 +16,11 @@ class PrinterProxy(currentName: String) : Printer {
         }
         // ˄
 
+    private var currentName: String = printerName
+        // ˅
+        
+        // ˄
+
     // A printer that actually prints
     private var real: RealPrinter? = null
         // ˅
@@ -29,17 +29,10 @@ class PrinterProxy(currentName: String) : Printer {
 
     override fun output(content: String) {
         // ˅
-        createPrinter()
-        real?.output(content)
-        // ˄
-    }
-
-    // Create an actual printer
-    private fun createPrinter() {
-        // ˅
         if (real == null) {
             real = RealPrinter(currentName)
         }
+        real!!.output(content)
         // ˄
     }
 

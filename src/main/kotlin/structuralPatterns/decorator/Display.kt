@@ -8,13 +8,13 @@ abstract class Display {
     
     // ˄
 
-    abstract fun getLineText(row: Int): String
-
     // Column width
     abstract fun getColumns(): Int
 
     // Number of rows
     abstract fun getRows(): Int
+
+    abstract fun getLineText(row: Int): String
 
     // Show all
     fun show() {

@@ -6,15 +6,15 @@ class PlainTextBuilder : Builder {
     // ˅
     // ˄
 
+    // String to output
+    val content: String
+        // ˅
+        get() = builder.toString()
+        // ˄
+
     private val builder: StringBuilder = StringBuilder()
         // ˅
         
-        // ˄
-
-    // String to output
-    val result: String
-        // ˅
-        get() = builder.toString()
         // ˄
 
     // Make a title of plain text

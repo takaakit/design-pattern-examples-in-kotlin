@@ -11,7 +11,7 @@ object DataLibrary {
     // ˄
 
     // Read a data library file.
-    fun getProperties(dataLibraryFileName: String): Properties {
+    internal fun getProperties(dataLibraryFileName: String): Properties {
         // ˅
         val prop = Properties()
         prop.load(FileInputStream(dataLibraryFileName))

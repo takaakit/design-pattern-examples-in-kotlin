@@ -11,7 +11,7 @@ class HTMLBuilder : Builder {
     // ˄
 
     // File name to create
-    var result: String? = null
+    var fileName: String? = null
         // ˅
         private set
         // ˄
@@ -24,8 +24,8 @@ class HTMLBuilder : Builder {
     // Make a title of HTML file
     override fun createTitle(title: String) {
         // ˅
-        result = "$title.html" // Set a title as a file name
-        writer = PrintWriter(FileWriter(result))
+        fileName = "$title.html" // Set a title as a file name
+        writer = PrintWriter(FileWriter(fileName))
         writer?.println("<html><head><title>$title</title></head><body>")  // Write a title
         writer?.println("<h1>$title</h1>")
         // ˄

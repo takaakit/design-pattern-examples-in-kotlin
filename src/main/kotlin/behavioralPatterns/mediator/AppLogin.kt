@@ -102,17 +102,6 @@ class AppLogin : Application(), Mediator {
         // ˄
     }
 
-    override fun createColleagues() {
-        // ˅
-        radioGuest = ColleagueRadioButton("Guest")
-        radioLogin = ColleagueRadioButton("Login")
-        textUsername = ColleagueTextField("")
-        textPassword = ColleagueTextField("")
-        buttonOk = ColleagueButton("OK")
-        buttonCancel = ColleagueButton("Cancel")
-        // ˄
-    }
-
     // Change enable/disable of the Colleagues when notified from the Mediators.
     override fun colleagueChanged() {
         // ˅
@@ -137,6 +126,17 @@ class AppLogin : Application(), Mediator {
                 }
             }
         }
+        // ˄
+    }
+
+    override fun createColleagues() {
+        // ˅
+        radioGuest = ColleagueRadioButton("Guest")
+        radioLogin = ColleagueRadioButton("Login")
+        textUsername = ColleagueTextField("")
+        textPassword = ColleagueTextField("")
+        buttonOk = ColleagueButton("OK")
+        buttonCancel = ColleagueButton("Cancel")
         // ˄
     }
 

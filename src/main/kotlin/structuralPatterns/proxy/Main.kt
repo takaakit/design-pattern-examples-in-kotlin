@@ -6,8 +6,11 @@ Print on a named printer. Setting and changing the printer name is done by Proxy
 
 fun main(args: Array<String>) {
     val p = PrinterProxy("PRINTER-A")
-    println("The current printer is ${p.printerName}.")
+    println("The printer name is ${p.printerName}.")
     p.printerName = "PRINTER-B"
-    println("The current printer is ${p.printerName}.")
+    println("The printer name is ${p.printerName}.")
+
+    println("Print start.")
     p.output("Nice to meet you.")
+    println("Print exit.")
 }

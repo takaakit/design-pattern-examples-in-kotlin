@@ -9,7 +9,7 @@ class LazySupporter(name: String) : Supporter(name) {
     // ˄
 
     // No troubles are handled.
-    override fun handle(trouble: Trouble): Boolean {
+    override fun canHandle(trouble: Trouble): Boolean {
         // ˅
         return false
         // ˄

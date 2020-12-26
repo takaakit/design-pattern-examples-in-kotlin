@@ -24,7 +24,7 @@ abstract class Supporter(name: String) {
     // Troubles are sent around.
     fun support(trouble: Trouble) {
         // ˅
-        if (handle(trouble)) {
+        if (canHandle(trouble)) {
             supported(trouble)
         } else if (next != null) {
             next?.support(trouble)
@@ -48,7 +48,7 @@ abstract class Supporter(name: String) {
         // ˄
     }
 
-    protected abstract fun handle(trouble: Trouble): Boolean
+    protected abstract fun canHandle(trouble: Trouble): Boolean
 
     // Trouble was supported.
     private fun supported(trouble: Trouble) {
