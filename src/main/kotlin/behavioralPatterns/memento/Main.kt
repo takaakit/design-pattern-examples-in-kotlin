@@ -22,7 +22,7 @@ fun main(args: Array<String>) {
             memento = gamer.createMemento()
         } else if (gamer.money < memento.money / 2) {
             println("(Gamer's money is less than half of the highest amount, so return to the recorded state.)")
-            gamer.restoreMemento(memento)
+            gamer.setMemento(memento)
             println("Gamer's money returns to " + gamer.money + ".")
         }
 

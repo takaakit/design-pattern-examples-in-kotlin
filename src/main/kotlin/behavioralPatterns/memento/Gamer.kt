@@ -29,7 +29,7 @@ class Gamer(money: Int) {
     }
 
     // Undo status
-    fun restoreMemento(memento: Memento) {
+    fun setMemento(memento: Memento) {
         // ˅
         money = memento.money
         // ˄
