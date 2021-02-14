@@ -9,7 +9,7 @@ class Program : Node {
     
     // ˄
 
-    private var commandList: Node? = null
+    private var commandList: CommandList? = null
         // ˅
         
         // ˄
