@@ -14,11 +14,14 @@ class Action : Node {
 
     override fun parse(context: Context) {
         // ˅
-        name = context.token
-        context.slideToken(name)
-        if (name != "forward" && name != "right" && name != "left") {
-            throw Exception("$name is unknown")
+        val currentToken = context.token
+        if (currentToken != "forward" && currentToken != "right" && currentToken != "left") {
+            throw Exception("$currentToken is unknown")
         }
+
+        name = currentToken     // Hold the current token as this action name
+
+        context.slideToken(currentToken)
         // ˄
     }
 

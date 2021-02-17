@@ -40,10 +40,10 @@ fun main(args: Array<String>) {
                 .filter(String::isNotBlank)
                 .forEach {
                     val text = it
-                    println("Before : \"$text\"")
+                    println("Before parsing : $text")
                     val node = Program()
                     node.parse(Context(text))
-                    println("After  : $node")
+                    println("After parsing  : $node")
         }
     }
 }

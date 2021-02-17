@@ -12,7 +12,7 @@ class Repeat : Node {
         
         // ˄
 
-    private var commandList: CommandList? = null
+    private var commandList: Node? = null
         // ˅
         
         // ˄
@@ -20,10 +20,14 @@ class Repeat : Node {
     override fun parse(context: Context) {
         // ˅
         context.slideToken("repeat")
+
         number = context.number
-        context.nextToken()
-        commandList = CommandList()
-        commandList?.parse(context)
+        context.slideToken(number.toString())
+
+        val aCommandList = CommandList()
+        aCommandList.parse(context)
+
+        this.commandList = aCommandList     // Hold the parsed command list
         // ˄
     }
 

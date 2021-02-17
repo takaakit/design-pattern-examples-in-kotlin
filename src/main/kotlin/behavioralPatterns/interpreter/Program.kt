@@ -9,7 +9,7 @@ class Program : Node {
     
     // ˄
 
-    private var commandList: CommandList? = null
+    private var commandList: Node? = null
         // ˅
         
         // ˄
@@ -17,8 +17,11 @@ class Program : Node {
     override fun parse(context: Context) {
         // ˅
         context.slideToken("program")
-        commandList = CommandList()
-        commandList?.parse(context)
+
+        val aCommandList = CommandList()
+        aCommandList.parse(context)
+
+        this.commandList = aCommandList     // Hold the parsed command list
         // ˄
     }
 

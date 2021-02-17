@@ -13,16 +13,19 @@ class Command : Node {
 
     override fun parse(context: Context) {
         // ˅
+        val aNode: Node
         when (context.token) {
             "repeat" -> {
-            node = Repeat()
-                node?.parse(context)
+                aNode = Repeat()
+                aNode.parse(context)
             }
             else -> {
-            node = Action()
-                node?.parse(context)
+                aNode = Action()
+                aNode.parse(context)
             }
         }
+
+        node = aNode    // Hold the parsed node
         // ˄
     }
 

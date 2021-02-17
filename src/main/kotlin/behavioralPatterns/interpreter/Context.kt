@@ -3,12 +3,12 @@ package behavioralPatterns.interpreter
 import java.util.*
 // ˄
 
-// Analyze the syntax
+// Hold the data which will be interpreted.
 class Context(line: String) {
     // ˅
     // ˄
 
-    private val tokenizer: StringTokenizer
+    private val tokenizer: StringTokenizer = StringTokenizer(line)
         // ˅
         // ˄
 
@@ -20,8 +20,7 @@ class Context(line: String) {
     val number: Int
         // ˅
         get() {
-            val number: Int
-            number = try {
+            val number: Int = try {
                 token!!.toInt()
             } catch (e: NumberFormatException) {
                 throw Exception("WARNING: $e")
@@ -52,7 +51,6 @@ class Context(line: String) {
 
     // ˅
     init {
-        tokenizer = StringTokenizer(line)
         nextToken()
     }
     // ˄
