@@ -14,6 +14,7 @@ object PageCreator {
         // ˅
         val addressBook = DataLibrary.getProperties("src/main/kotlin/structuralPatterns/facade/addressbook.txt")
         val userName = addressBook.getProperty(mailAddress)
+        
         val writer = HtmlWriter(FileWriter(htmlFileName))
         writer.heading("$userName's homepage")
         writer.paragraph("Welcome to $userName's homepage.")

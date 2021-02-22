@@ -6,9 +6,7 @@ Observers observe objects generating a numerical value and display the value. Th
 
 fun main(args: Array<String>) {
     val number = RandomNumber()
-    val digitObserver = DigitObserver()
-    number.addObserver(digitObserver)
-    val barChartObserver = BarChartObserver()
-    number.addObserver(barChartObserver)
+    number.addObserver(DigitObserver())
+    number.addObserver(BarChartObserver())
     number.generate()
 }

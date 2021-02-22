@@ -26,8 +26,8 @@ fun main(args: Array<String>) {
             println("Gamer's money returns to " + gamer.money + ".")
         }
 
-        Thread.sleep(1000)
-
         println()
+
+        Thread.sleep(1000)
     }
 }

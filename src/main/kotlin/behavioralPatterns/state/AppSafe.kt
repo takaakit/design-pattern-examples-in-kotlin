@@ -46,22 +46,22 @@ class AppSafe : Application(), Context {
         textMessage = TextArea("")
         val buttonUse = Button("Use")
         buttonUse.onMouseClicked = EventHandler {
-            state.useSafe(this) // Use button pressed
+            useSafe()   // Use button pressed
         }
 
         val buttonAlarm = Button("Alarm")
         buttonAlarm.onMouseClicked = EventHandler {
-            state.soundBell(this) // Alarm button pressed
+            soundBell() // Alarm button pressed
         }
         
         val buttonPhone = Button("Phone")
         buttonPhone.onMouseClicked = EventHandler {
-            state.call(this) // Phone button pressed
+            call()      // Phone button pressed
         }
         
         val buttonExit = Button("Exit")
         buttonExit.onMouseClicked = EventHandler {
-            System.exit(0) // Exit button pressed
+            exit()      // Exit button pressed
         }
         
         val topPane = Pane(textTime)
@@ -116,6 +116,30 @@ class AppSafe : Application(), Context {
     override fun recordSecurityLog(msg: String) {
         // ˅
         textMessage?.appendText("record ... $msg\n")
+        // ˄
+    }
+
+    private fun useSafe() {
+        // ˅
+        state.useSafe(this)
+        // ˄
+    }
+
+    private fun soundBell() {
+        // ˅
+        state.soundBell(this)
+        // ˄
+    }
+
+    private fun call() {
+        // ˅
+        state.call(this)
+        // ˄
+    }
+
+    private fun exit() {
+        // ˅
+        System.exit(0)
         // ˄
     }
 
