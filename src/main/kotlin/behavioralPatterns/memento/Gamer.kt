@@ -21,14 +21,12 @@ class Gamer(money: Int) {
         
         // ˄
 
-    // Get current status
     fun createMemento(): Memento {
         // ˅
         return Memento(money)
         // ˄
     }
 
-    // Undo status
     fun setMemento(memento: Memento) {
         // ˅
         money = memento.money

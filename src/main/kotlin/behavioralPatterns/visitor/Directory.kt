@@ -38,7 +38,7 @@ class Directory(name: String) : FileSystemElement() {
         // ˄
     }
 
-    // Add an entry
+    // Add an element
     fun add(element: FileSystemElement): FileSystemElement {
         // ˅
         elements.add(element)

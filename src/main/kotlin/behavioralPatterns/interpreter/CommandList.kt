@@ -20,10 +20,10 @@ class CommandList : Node {
                 context.slideToken("end")
                 break
             } else {
-                val aCommand = Command()
-                aCommand.parse(context)
+                val aNode: Node = Command()
+                aNode.parse(context)
 
-                nodes.add(aCommand)     // Hold the parsed node
+                nodes.add(aNode)     // Hold the parsed node
             }
         }
         // ˄
