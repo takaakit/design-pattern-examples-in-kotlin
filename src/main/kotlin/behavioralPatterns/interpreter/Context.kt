@@ -3,7 +3,7 @@ package behavioralPatterns.interpreter
 import java.util.*
 // ˄
 
-// Hold the data which will be interpreted.
+// Hold data which will be interpreted.
 class Context(line: String) {
     // ˅
     // ˄

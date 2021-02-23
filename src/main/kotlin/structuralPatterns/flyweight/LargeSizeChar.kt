@@ -12,7 +12,7 @@ class LargeSizeChar(charName: Char) {
     // ˄
 
     // Display data of the large size character
-    private var displayData: String? = null
+    private var displayData: String
         // ˅
         
         // ˄
