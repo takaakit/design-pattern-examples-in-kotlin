@@ -1,4 +1,4 @@
-[<img src="./screenshots/DiagramMap.svg">](https://raw.githubusercontent.com/takaakit/design-pattern-examples-in-kotlin/master/screenshots/DiagramMap.svg)
+![](screenshots/DiagramMap.svg "All diagrams")
 
 Design Pattern Examples in Kotlin
 ===
@@ -62,7 +62,7 @@ Installation
 
 **M PLUS plug-in**
 * Download the plug-in from [M PLUS plug-in site](https://sites.google.com/view/m-plus-plugin/download), and install.  
-  **Use ver.1.9 or higher.**
+  Use **ver.1.9** or higher.
 
 **Development Environment for Kotlin and JavaFX**
 * Prepare an arbitrary development environment for Kotlin and JavaFX. If you don't want to install JavaFX, you need to remove the following packages that use JavaFX to prevent build errors.
@@ -72,10 +72,12 @@ Installation
 
 Usage
 -----
-* Select model elements on the model browser of Astah, and press the "Generate code" button to generate.  
-* The generated code has "User Code Area". The "User Code Area" is the area enclosed by "˅" and "˄". Handwritten code written in the "User Code Area" remains after a re-generation.
-* You can run the program from "Main.kt" for each Design Pattern.
-* For detailed usage of the tools, please see [Astah Manual](http://astah.net/manual) and [M PLUS plug-in Tips](https://sites.google.com/view/m-plus-plugin/tips).
+1. Select model elements on the model browser of Astah.
+2. Click the **Generate code** button.  
+   The generated code has **User Code Area**. The User Code Area is the area enclosed by "˅" and "˄". Handwritten code written in the User Code Area remains after a re-generation.
+3. Run the program from **Main.kt** for each Design Pattern.  
+
+For detailed usage of the tools, please see [Astah Manual](http://astah.net/manual) and [M PLUS plug-in Tips](https://sites.google.com/view/m-plus-plugin/tips).
 
 ![](screenshots/Usage.gif "Usage")
 
