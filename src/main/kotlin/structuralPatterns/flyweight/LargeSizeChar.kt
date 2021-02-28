@@ -20,7 +20,7 @@ class LargeSizeChar(charName: Char) {
     // Display the large size character
     fun display() {
         // ˅
-        print(displayData)
+        println(displayData)
         // ˄
     }
 
@@ -38,7 +38,7 @@ class LargeSizeChar(charName: Char) {
             displayData = builder.toString()
         }
         catch (e: IOException) {
-            displayData = "$charName?\n"
+            displayData = "$charName?"
         }
     }
     // ˄
