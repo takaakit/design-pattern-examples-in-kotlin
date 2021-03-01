@@ -9,7 +9,7 @@ class CreditCardFactory : Factory() {
     // ˅
     // ˄
 
-    override fun createProduct(owner: String): Product {
+    protected override fun createProduct(owner: String): Product {
         // ˅
         return CreditCard(owner)
         // ˄
