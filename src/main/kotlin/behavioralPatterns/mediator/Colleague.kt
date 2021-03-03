@@ -1,13 +1,20 @@
 package behavioralPatterns.mediator
 // ˅
+
 // ˄
 
-interface Colleague {
+abstract class Colleague protected constructor() {
+    // ˅
+    
+    // ˄
 
-    fun setMediator(mediator: Mediator?)
+    var mediator: Mediator? = null
+        // ˅
+        
+        // ˄
 
     // Set enable/disable from the Mediator
-    fun setActivation(isEnable: Boolean)
+    abstract fun setActivation(isEnable: Boolean)
 
     // ˅
     

@@ -2,35 +2,34 @@ package behavioralPatterns.mediator
 // ˅
 import javafx.event.EventHandler
 import javafx.scene.control.TextField
-import javafx.scene.input.KeyEvent
 
 // ˄
 
-class ColleagueTextField(text: String) : TextField(text), Colleague {
+class ColleagueTextField(textField: TextField) : Colleague() {
     // ˅
+    
     // ˄
 
-    private var mediator: Mediator? = null
+    val isEmpty: Boolean
+        // ˅
+        get() = textField.text.isEmpty()
+        // ˄
+
+    val textField: TextField = textField
         // ˅
         
         // ˄
 
-    override fun setMediator(mediator: Mediator?) {
-        // ˅
-        this.mediator = mediator
-        // ˄
-    }
-
     // Set enable/disable from the Mediator
     override fun setActivation(isEnable: Boolean) {
         // ˅
-        isDisable = !isEnable
+        this.textField.isDisable = !isEnable
         // ˄
     }
 
     // ˅
     init {
-        onKeyReleased = EventHandler {
+        this.textField.onKeyReleased = EventHandler {
             mediator?.colleagueChanged()
         }
     }
