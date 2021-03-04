@@ -20,22 +20,21 @@ This project is available for the following objectives:
 ```kotlin:File class
 package structuralPatterns.composite
 // ˅
-
 // ˄
 
 class File(name: String, size: Int) : FileSystemElement() {
     // ˅
-
+    
     // ˄
 
-    protected override var name: String = name
+    override val name: String = name
         // ˅
-
+        
         // ˄
 
-    protected override var size: Int = size
+    override val size: Int = size
         // ˅
-
+        
         // ˄
 
     // Print this element with the "upperPath".
@@ -46,7 +45,7 @@ class File(name: String, size: Int) : FileSystemElement() {
     }
 
     // ˅
-
+    
     // ˄
 }
 
