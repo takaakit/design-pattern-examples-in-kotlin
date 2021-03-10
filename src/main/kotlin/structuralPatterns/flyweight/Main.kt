@@ -3,7 +3,9 @@ package structuralPatterns.flyweight
 import java.util.*
 
 /*
-Display a string consisting of large characters (0-9 digits only). Large character objects are not created until they are needed. And the created objects are reused.
+Display a string consisting of large characters (0-9 digits only).
+Large character objects are not created until they are needed.
+And the created objects are reused.
 
 Example Output
 -----

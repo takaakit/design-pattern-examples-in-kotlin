@@ -1,7 +1,8 @@
 package structuralPatterns.composite
 
 /*
-Represents a file system composed of files and directories. "FileSystemElement" makes it possible to treat "File" and "Directory" uniformly.
+Represents a file system composed of files and directories. FileSystemElement makes
+it possible to treat File and Directory uniformly.
  */
 
 fun main(args: Array<String>) {
