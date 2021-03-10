@@ -46,7 +46,7 @@ class Directory(name: String) : FileSystemElement() {
         // ˄
     }
 
-    // Create a iterator
+    // Get the iterator
     operator fun iterator(): Iterator<FileSystemElement> {
         // ˅
         return elements.iterator()
