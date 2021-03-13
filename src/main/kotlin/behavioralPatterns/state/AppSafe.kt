@@ -91,8 +91,10 @@ class AppSafe : Application(), Context {
         } else {
             "$hour:00"
         }
+        
         println(currentTime)
         textTime?.text = currentTime
+        
         state.setTime(this, hour)
         // ˄
     }

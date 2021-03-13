@@ -2,7 +2,7 @@ package behavioralPatterns.observer
 // ˅
 // ˄
 
-// Display values with a bar chart.
+// Display values as a bar chart.
 class BarChartObserver : Observer {
     // ˅
     // ˄
