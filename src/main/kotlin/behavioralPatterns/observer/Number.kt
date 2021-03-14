@@ -7,9 +7,9 @@ abstract class Number {
     // ˅
     // ˄
 
-    abstract val value: Int
+    var value: Int = 0
         // ˅
-        
+        protected set
         // ˄
 
     private val observers: MutableList<Observer> = mutableListOf<Observer>()
@@ -25,7 +25,7 @@ abstract class Number {
         // ˄
     }
 
-    fun deleteObserver(observer: Observer) {
+    fun removeObserver(observer: Observer) {
         // ˅
         observers.remove(observer)
         // ˄

@@ -9,11 +9,6 @@ class RandomNumber : Number() {
     // ˅
     // ˄
 
-    override var value: Int = 0
-        // ˅
-        private set
-        // ˄
-
     private val random: Random = Random()
         // ˅
         
