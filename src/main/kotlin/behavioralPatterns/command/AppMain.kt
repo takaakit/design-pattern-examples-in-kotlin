@@ -29,12 +29,12 @@ class AppMain : Application() {
     override fun start(primaryStage: Stage) {
         // ˅
         // Create buttons
-        val clearButton = Button("clear")
+        val clearButton = Button("Clear")
         clearButton.onMousePressed = EventHandler {
             canvas.clear()
             history.clear()
         }
-        val undoButton = Button("undo")
+        val undoButton = Button("Undo")
         undoButton.onMousePressed = EventHandler {
             canvas.clear()
             history.undo()
