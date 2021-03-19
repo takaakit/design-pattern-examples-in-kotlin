@@ -5,7 +5,7 @@ package structuralPatterns.proxy
 class RealPrinter(printerName: String) : Printer {
     // ˅
     init {
-        heavyTask("Creating an instance($printerName) of the Printer")
+        heavyTask("Creating an instance ($printerName) of the Printer")
     }
     // ˄
 
