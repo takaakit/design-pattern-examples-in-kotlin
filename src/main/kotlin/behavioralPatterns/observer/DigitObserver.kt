@@ -3,14 +3,20 @@ package behavioralPatterns.observer
 // ˄
 
 // Display values as a number.
-class DigitObserver : Observer {
+class DigitObserver(numberSubject: NumberSubject) : Observer {
     // ˅
     // ˄
 
-    override fun update(number: Number) {
+    private var numberSubject: NumberSubject = numberSubject
         // ˅
-        println("Digit    : ${number.value}")
-        Thread.sleep(100)
+        
+        // ˄
+
+    override fun update(changedSubject: Subject) {
+        // ˅
+        if (changedSubject.equals(numberSubject)) {
+            println("Digit    : ${numberSubject.value}")
+        }
         // ˄
     }
 

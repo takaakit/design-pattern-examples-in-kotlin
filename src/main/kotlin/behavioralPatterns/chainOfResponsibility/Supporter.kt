@@ -42,18 +42,12 @@ abstract class Supporter(name: String) {
         // ˄
     }
 
-    override fun toString(): String {
-        // ˅
-        return "[$name]"
-        // ˄
-    }
-
     protected abstract fun canHandle(trouble: Trouble): Boolean
 
     // Trouble was supported.
     private fun supported(trouble: Trouble) {
         // ˅
-        println("$trouble was handled by $this.")
+        println("$trouble was handled by $name.")
         // ˄
     }
 

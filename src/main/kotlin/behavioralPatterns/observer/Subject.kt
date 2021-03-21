@@ -3,29 +3,22 @@ package behavioralPatterns.observer
 // ˄
 
 // An abstract class that generates numbers.
-abstract class Number {
+open class Subject {
     // ˅
     // ˄
-
-    var value: Int = 0
-        // ˅
-        protected set
-        // ˄
 
     private val observers: MutableList<Observer> = mutableListOf<Observer>()
         // ˅
         
         // ˄
 
-    abstract fun generate()
-
-    fun addObserver(observer: Observer) {
+    fun attach(observer: Observer) {
         // ˅
         observers.add(observer)
         // ˄
     }
 
-    fun removeObserver(observer: Observer) {
+    fun detach(observer: Observer) {
         // ˅
         observers.remove(observer)
         // ˄

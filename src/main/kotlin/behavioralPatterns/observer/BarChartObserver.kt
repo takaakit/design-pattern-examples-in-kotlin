@@ -3,18 +3,24 @@ package behavioralPatterns.observer
 // ˄
 
 // Display values as a bar chart.
-class BarChartObserver : Observer {
+class BarChartObserver(numberSubject: NumberSubject) : Observer {
     // ˅
     // ˄
 
-    override fun update(number: Number) {
+    private var numberSubject: NumberSubject = numberSubject
         // ˅
-        print("Bar chart: ")
-        for (i in 0 until number.value) {
-            print("*")
+        
+        // ˄
+
+    override fun update(changedSubject: Subject) {
+        // ˅
+        if (changedSubject.equals(numberSubject)) {
+            print("Bar chart: ")
+            for (i in 0 until numberSubject.value) {
+                print("*")
+            }
+            println()
         }
-        println()
-        Thread.sleep(100)
         // ˄
     }
 

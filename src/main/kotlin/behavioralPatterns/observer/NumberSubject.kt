@@ -5,23 +5,18 @@ import java.util.*
 // ˄
 
 // Generate a random number.
-class RandomNumber : Number() {
+class NumberSubject : Subject() {
     // ˅
     // ˄
 
-    private val random: Random = Random()
+    var value: Int = 0
         // ˅
-        
-        // ˄
-
-    override fun generate() {
-        // ˅
-        for (i in 0..19) {
-            value = random.nextInt(50)
+        get() = field
+        set(value) {
+            field = value
             notifyObservers()
         }
         // ˄
-    }
 
     // ˅
     
