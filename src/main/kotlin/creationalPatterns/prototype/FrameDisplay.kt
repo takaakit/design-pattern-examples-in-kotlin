@@ -14,7 +14,7 @@ class FrameDisplay(borderChar: Char) : Display {
         
         // ˄
 
-    override fun createClone(): Display {
+    override fun clone(): Display {
         // ˅
         return FrameDisplay(borderChar)
         // ˄

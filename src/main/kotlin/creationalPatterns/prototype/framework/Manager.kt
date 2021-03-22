@@ -20,7 +20,7 @@ class Manager {
     fun getDisplay(displayName: String): Display {
         // ˅
         val d = display[displayName]
-        return d!!.createClone()
+        return d!!.clone()
         // ˄
     }
 

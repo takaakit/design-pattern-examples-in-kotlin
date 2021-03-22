@@ -4,7 +4,7 @@ package creationalPatterns.prototype.framework
 
 interface Display {
 
-    fun createClone(): Display
+    fun clone(): Display
 
     fun show(message: String)
 

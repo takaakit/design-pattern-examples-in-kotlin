@@ -14,7 +14,7 @@ class UnderlineDisplay(underlineChar: Char) : Display {
         
         // ˄
 
-    override fun createClone(): Display {
+    override fun clone(): Display {
         // ˅
         return UnderlineDisplay(underlineChar)
         // ˄
