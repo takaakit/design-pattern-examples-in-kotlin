@@ -2,7 +2,6 @@ package behavioralPatterns.observer
 // ˅
 // ˄
 
-// An abstract class that generates numbers.
 open class Subject {
     // ˅
     // ˄
