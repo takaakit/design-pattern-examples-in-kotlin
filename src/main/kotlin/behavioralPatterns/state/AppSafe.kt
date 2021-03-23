@@ -1,16 +1,17 @@
 package behavioralPatterns.state
 // ˅
 import javafx.application.Application
+import javafx.application.Platform
 import javafx.event.EventHandler
 import javafx.geometry.Pos
 import javafx.scene.Scene
 import javafx.scene.control.Button
 import javafx.scene.control.TextArea
 import javafx.scene.control.TextField
-import javafx.scene.input.MouseEvent
 import javafx.scene.layout.HBox
 import javafx.scene.layout.Pane
 import javafx.scene.layout.VBox
+import javafx.scene.text.Font
 import javafx.stage.Stage
 import kotlin.concurrent.thread
 
@@ -43,30 +44,28 @@ class AppSafe : Application(), Context {
     override fun start(primaryStage: Stage) {
         // ˅
         textTime = TextField("")
+        textTime!!.isEditable = false
         textMessage = TextArea("")
+        textMessage!!.isEditable = false
+
         val buttonUse = Button("Use")
         buttonUse.onMouseClicked = EventHandler {
-            useSafe()   // Use button pressed
+            pressedUseButton()
         }
 
         val buttonAlarm = Button("Alarm")
         buttonAlarm.onMouseClicked = EventHandler {
-            soundBell() // Alarm button pressed
+            pressedAlarmButton()
         }
         
         val buttonPhone = Button("Phone")
         buttonPhone.onMouseClicked = EventHandler {
-            call()      // Phone button pressed
+            pressedPhoneButton()
         }
-        
-        val buttonExit = Button("Exit")
-        buttonExit.onMouseClicked = EventHandler {
-            exit()      // Exit button pressed
-        }
-        
+
         val topPane = Pane(textTime)
         val centerScreen = Pane(textMessage)
-        val bottomPane = HBox(buttonUse, buttonAlarm, buttonPhone, buttonExit)
+        val bottomPane = HBox(buttonUse, buttonAlarm, buttonPhone)
         bottomPane.alignment = Pos.BOTTOM_CENTER
         val mainPane = VBox(topPane, centerScreen, bottomPane)
 
@@ -85,16 +84,18 @@ class AppSafe : Application(), Context {
     // Set time
     override fun setTime(hour: Int) {
         // ˅
-        var currentTime = "Current Time : "
-        currentTime += if (hour < 10) {
-            "0$hour:00"
-        } else {
-            "$hour:00"
+        Platform.runLater {     // Updating UI is run on the JavaFX Application thread using Platform.runLater.
+            var currentTime = "Current Time : "
+            currentTime += if (hour < 10) {
+                "0$hour:00"
+            } else {
+                "$hour:00"
+            }
+
+            println(currentTime)
+            textTime?.text = currentTime
         }
-        
-        println(currentTime)
-        textTime?.text = currentTime
-        
+
         state.setTime(this, hour)
         // ˄
     }
@@ -121,27 +122,21 @@ class AppSafe : Application(), Context {
         // ˄
     }
 
-    private fun useSafe() {
+    private fun pressedUseButton() {
         // ˅
-        state.useSafe(this)
+        state.use(this)
         // ˄
     }
 
-    private fun soundBell() {
+    private fun pressedAlarmButton() {
         // ˅
-        state.soundBell(this)
+        state.alarm(this)
         // ˄
     }
 
-    private fun call() {
+    private fun pressedPhoneButton() {
         // ˅
-        state.call(this)
-        // ˄
-    }
-
-    private fun exit() {
-        // ˅
-        System.exit(0)
+        state.phone(this)
         // ˄
     }
 

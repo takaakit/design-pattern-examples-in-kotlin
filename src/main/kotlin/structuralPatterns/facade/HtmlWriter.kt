@@ -4,7 +4,7 @@ import java.io.Writer
 
 // ˄
 
-class HtmlWriter internal constructor(writer: Writer) {
+class HtmlWriter(writer: Writer) {
     // ˅
     
     // ˄
@@ -15,7 +15,7 @@ class HtmlWriter internal constructor(writer: Writer) {
         // ˄
 
     // Write a title
-    internal fun heading(title: String) {
+    fun heading(title: String) {
         // ˅
         writer.write("<html>")
         writer.write("<head><title>$title</title></head>")
@@ -25,20 +25,20 @@ class HtmlWriter internal constructor(writer: Writer) {
     }
 
     // Write a paragraph
-    internal fun paragraph(message: String) {
+    fun paragraph(message: String) {
         // ˅
         writer.write("<p>$message</p>\n")
         // ˄
     }
 
     // Write a mail address
-    internal fun mailto(mailAddress: String, userName: String) {
+    fun mailto(mailAddress: String, userName: String) {
         // ˅
         anchor("mailto:$mailAddress", userName)
         // ˄
     }
 
-    internal fun close() {
+    fun close() {
         // ˅
         writer.write("</body>")
         writer.write("</html>\n")

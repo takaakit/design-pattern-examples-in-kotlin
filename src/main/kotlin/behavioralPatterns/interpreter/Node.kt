@@ -7,6 +7,8 @@ interface Node {
 
     fun parse(context: Context)
 
+    override fun toString(): String
+
     // ˅
     
     // ˄

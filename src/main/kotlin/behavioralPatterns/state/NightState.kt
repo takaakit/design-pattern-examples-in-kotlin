@@ -8,7 +8,6 @@ object NightState : State {
     
     // ˄
 
-    // Set time
     override fun setTime(context: Context, hour: Int) {
         // ˅
         if (9 <= hour && hour < 17) {
@@ -17,22 +16,19 @@ object NightState : State {
         // ˄
     }
 
-    // Use a safe
-    override fun useSafe(context: Context) {
+    override fun use(context: Context) {
         // ˅
         context.callSecurityGuardsRoom("Emergency: Use a safe at night!")
         // ˄
     }
 
-    // Sound a emergency bell
-    override fun soundBell(context: Context) {
+    override fun alarm(context: Context) {
         // ˅
         context.callSecurityGuardsRoom("Sound a emergency bell at night")
         // ˄
     }
 
-    // Make a normal call
-    override fun call(context: Context) {
+    override fun phone(context: Context) {
         // ˅
         context.recordSecurityLog("Record a night call")
         // ˄

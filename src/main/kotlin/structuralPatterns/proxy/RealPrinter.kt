@@ -2,24 +2,36 @@ package structuralPatterns.proxy
 // ˅
 // ˄
 
-class RealPrinter(printerName: String) : Printer {
+class RealPrinter(name: String) : Printer {
     // ˅
     init {
-        heavyTask("Creating an instance ($printerName) of the Printer")
+        heavyTask("Creating an instance ($name) of the Printer")
     }
     // ˄
 
-    var printerName: String = printerName
+    private var name: String = name
         // ˅
         
         // ˄
+
+    override fun getName(): String {
+        // ˅
+        return name
+        // ˄
+    }
+
+    override fun changeName(name: String) {
+        // ˅
+        this.name = name
+        // ˄
+    }
 
     // Display a content with the name
     override fun output(content: String) {
         // ˅
         println("==========")
         println(content)
-        println("Printed by $printerName")
+        println("Printed by $name")
         println("==========")
         // ˄
     }
