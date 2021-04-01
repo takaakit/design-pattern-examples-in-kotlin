@@ -24,7 +24,7 @@ object NightState : State {
 
     override fun alarm(context: Context) {
         // ˅
-        context.callSecurityGuardsRoom("Sound a emergency bell at night")
+        context.callSecurityGuardsRoom("Sound an emergency bell at night")
         // ˄
     }
 
