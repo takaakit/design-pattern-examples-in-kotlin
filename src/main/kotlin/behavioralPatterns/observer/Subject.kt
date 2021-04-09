@@ -2,6 +2,7 @@ package behavioralPatterns.observer
 // ˅
 // ˄
 
+// Provides an interface for attaching and detaching Observer objects.
 open class Subject {
     // ˅
     // ˄
