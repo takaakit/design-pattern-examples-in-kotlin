@@ -10,7 +10,13 @@ abstract class Factory {
 
     fun create(owner: String): Product {
         // ˅
-        return createProduct(owner)
+        // Write pre-creation code here, if any.
+
+        val product = createProduct(owner)
+
+        // Write post-creation code here, if any.
+
+        return product
         // ˄
     }
 
