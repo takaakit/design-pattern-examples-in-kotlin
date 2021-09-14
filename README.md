@@ -14,6 +14,7 @@ This project is available for the following objectives:
 
 ![](screenshots/CompositePattern.svg "Composite Pattern")
 
+<a id="code-example"></a>
 > Kotlin code example:
 
 ```kotlin:File class
@@ -55,29 +56,33 @@ class File(name: String, size: Int) : FileSystemElement() {
 
 Installation
 ------------
-**Astah**
-* Download Astah UML or Professional from [Change Vision site](http://astah.net/download), and install.  
+**UML Modeling Tool**
+* Download the modeling tool [Astah](http://astah.net/download) UML or Professional, and install.  
+* Download [M PLUS](https://sites.google.com/view/m-plus-plugin/download) plug-in **ver.1.9** or higher, and add it to Astah.  
+  [How to add plugins to Astah](https://astahblog.com/2014/12/15/astah_plugins/)
 
-**M PLUS plug-in**
-* Download the plug-in from [M PLUS plug-in site](https://sites.google.com/view/m-plus-plugin/download), and install.  
-  Use **ver.1.9** or higher.
-
-**Development Environment for Kotlin and JavaFX**
-* Prepare an arbitrary development environment for Kotlin and JavaFX. If you don't want to install JavaFX, you need to remove the following packages that use JavaFX to prevent build errors.
+**Kotlin Development Environment**
+* Install Java Development Kit (JDK) and JavaFX.  
+  If you don't want to install JavaFX, you need to remove the following packages that use JavaFX to prevent build errors.
   - src/main/kotlin/behavioralPatterns/command
   - src/main/kotlin/behavioralPatterns/mediator
   - src/main/kotlin/behavioralPatterns/state
+* Optionally, install an IDE (e.g. [IntelliJ](https://www.jetbrains.com/idea/download/)).
 
 Usage
 -----
-1. Select model elements on the model browser of Astah.
-2. Click the **Generate code** button.  
-   The generated code has **User Code Area**. The User Code Area is the area enclosed by "˅" and "˄". Handwritten code written in the User Code Area remains after a re-generation.
-3. Run the program from **Main.kt** for each Design Pattern.  
+**Code Generation from UML**
+  1. Open the Astah file (model/DesignPatternExamplesInKotlin.asta).
+  2. Select model elements on the model browser of Astah.
+  3. Click the **Generate Code** button.  
+  ![](screenshots/GenerateCode.gif "Generate Code")  
+  The generated code has **User Code Area**. The User Code Area is the area enclosed by "˅" and "˄". Handwritten code written in the User Code Area remains after a re-generation. [View code example](#code-example).  
+  For detailed usage of the tools, please see [Astah Manual](http://astah.net/manual) and [M PLUS plug-in Tips](https://sites.google.com/view/m-plus-plugin-tips).
 
-For detailed usage of the tools, please see [Astah Manual](http://astah.net/manual) and [M PLUS plug-in Tips](https://sites.google.com/view/m-plus-plugin-tips).
-
-![](screenshots/Usage.gif "Usage")
+**Build and Run (if you use IntelliJ)**
+  1. Open the project root directory (design-pattern-examples-in-kotlin) in IntelliJ.
+  2. Open `Main.kt` for the pattern you want to run, and click `Run` icon in the left gutter.
+     ![](screenshots/BuildAndRun.gif "Build and Run")  
 
 References
 ----------
