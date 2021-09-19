@@ -17,7 +17,7 @@ This project is available for the following objectives:
 <a id="code-example"></a>
 > Kotlin code example:
 
-```kotlin:File class
+```kotlin
 package structuralPatterns.composite
 // ˅
 // ˄
