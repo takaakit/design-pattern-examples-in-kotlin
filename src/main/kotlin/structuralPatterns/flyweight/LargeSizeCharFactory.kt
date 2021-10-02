@@ -7,7 +7,7 @@ object LargeSizeCharFactory {
     
     // ˄
 
-    private val poolChars: MutableMap<String, LargeSizeChar> = mutableMapOf<String, LargeSizeChar>()
+    private val poolChars: MutableMap<Char, LargeSizeChar> = mutableMapOf<Char, LargeSizeChar>()
         // ˅
         
         // ˄
@@ -15,10 +15,10 @@ object LargeSizeCharFactory {
     // Create an instance of the large size character.
     fun getLargeSizeChar(charName: Char): LargeSizeChar {
         // ˅
-        var lsc = poolChars.get(charName.toString())
+        var lsc = poolChars.get(charName)
         if (lsc == null) {
             lsc = LargeSizeChar(charName) // Create an instance
-            poolChars[charName.toString()] = lsc
+            poolChars[charName] = lsc
         }
         return lsc
         // ˄
