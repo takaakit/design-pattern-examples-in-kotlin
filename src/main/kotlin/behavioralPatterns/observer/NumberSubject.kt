@@ -4,6 +4,7 @@ import java.util.*
 
 // ˄
 
+// Holds a value and notifies observers when the value is set.
 class NumberSubject : Subject() {
     // ˅
     // ˄
