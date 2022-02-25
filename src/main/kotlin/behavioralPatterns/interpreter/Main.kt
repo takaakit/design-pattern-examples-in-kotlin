@@ -36,7 +36,7 @@ After parsing  : [program [repeat 4 [forward, right]]]
 */
 
 fun main(args: Array<String>) {
-    File("src/main/kotlin/behavioralPatterns/interpreter/program.txt").bufferedReader().use {
+    File("src/main/kotlin/behavioralPatterns/interpreter/program.txt").bufferedReader().use { it ->
         it.lineSequence()
                 .filter(String::isNotBlank)
                 .forEach {

@@ -25,7 +25,7 @@ class HTMLBuilder : Builder {
     override fun createTitle(title: String) {
         // ˅
         fileName = "$title.html" // Set a title as a file name
-        writer = PrintWriter(FileWriter(fileName))
+        writer = PrintWriter(FileWriter(fileName!!))
         writer?.println("<html><head><title>$title</title></head><body>")  // Write a title
         writer?.println("<h1>$title</h1>")
         // ˄

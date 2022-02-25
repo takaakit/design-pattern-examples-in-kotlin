@@ -4,6 +4,7 @@ import creationalPatterns.abstractFactory.factory.Factory
 import creationalPatterns.abstractFactory.listFactory.ListFactory
 import creationalPatterns.abstractFactory.tableFactory.TableFactory
 import java.util.*
+import kotlin.system.exitProcess
 
 /*
 Create a hierarchical link collection as an HTML file. It can be created in either tabular or list format.
@@ -19,7 +20,7 @@ fun main(args: Array<String>) {
         number = scan.nextInt()
     } catch (e: InputMismatchException) {
         System.err.println("Unexpected value.")
-        System.exit(-1)
+        exitProcess(-1)
     }
 
     var factory: Factory? = null
@@ -29,10 +30,10 @@ fun main(args: Array<String>) {
         factory = TableFactory()
     } else {
         System.err.println("The value is not 1 or 2.")
-        System.exit(-1)
+        exitProcess(-1)
     }
 
-    val washingtonPost = factory!!.createLink("The Washington Post", "https://www.washingtonpost.com/")
+    val washingtonPost = factory.createLink("The Washington Post", "https://www.washingtonpost.com/")
     val newYorkTimes = factory.createLink("The NewYork Times", "https://www.nytimes.com/")
     val financialTimes = factory.createLink("The Financial Times", "https://www.ft.com/")
 

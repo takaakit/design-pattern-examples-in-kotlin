@@ -10,7 +10,7 @@ object NightState : State {
 
     override fun setTime(context: Context, hour: Int) {
         // ˅
-        if (9 <= hour && hour < 17) {
+        if (hour in 9..16) {
             context.changeState(DaytimeState)
         }
         // ˄

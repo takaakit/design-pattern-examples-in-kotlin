@@ -1,6 +1,7 @@
 package behavioralPatterns.memento
 // ˅
 import java.util.*
+import kotlin.system.exitProcess
 
 // ˄
 
@@ -53,7 +54,7 @@ class Gamer(money: Int) {
             else -> {
                 // Other...Exit
                 System.err.println("Unexpected value.")
-                System.exit(-1)
+                exitProcess(-1)
             }
         }
         // ˄

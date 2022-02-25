@@ -7,6 +7,7 @@ import javafx.scene.control.Button
 import javafx.scene.layout.HBox
 import javafx.scene.layout.StackPane
 import javafx.stage.Stage
+import kotlin.system.exitProcess
 
 // ˄
 
@@ -46,7 +47,7 @@ class AppMain : Application() {
         primaryStage.title = "Command Example"
         primaryStage.scene = scene
         primaryStage.onCloseRequest = EventHandler {
-        	System.exit(0)
+        	exitProcess(0)
         }
 
         // Show

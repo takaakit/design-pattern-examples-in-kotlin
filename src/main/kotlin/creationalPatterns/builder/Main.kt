@@ -2,6 +2,7 @@ package creationalPatterns.builder
 
 import java.io.File
 import java.util.*
+import kotlin.system.exitProcess
 
 /*
 Create documents in HTML format and text format. It is possible to create different documents
@@ -25,9 +26,9 @@ fun main(args: Array<String>) {
         director.build()
         val fileName = htmlBuilder.fileName
         println("$fileName has been created.")
-        println("Output File: ${File(File(".").absoluteFile.parent, fileName).path}")
+        println("Output File: ${File(File(".").absoluteFile.parent, fileName!!).path}")
     } else {
         System.err.println("The value is not \"plain\" or \"html\".")
-        System.exit(-1)
+        exitProcess(-1)
     }
 }

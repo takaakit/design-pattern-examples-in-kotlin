@@ -10,6 +10,7 @@ import javafx.scene.layout.GridPane
 import javafx.scene.layout.HBox
 import javafx.scene.layout.VBox
 import javafx.stage.Stage
+import kotlin.system.exitProcess
 
 // ˄
 
@@ -85,7 +86,7 @@ class AppLogin : Application(), Mediator {
         primaryStage.scene = scene
         primaryStage.title = "Mediator Example"
         primaryStage.onCloseRequest = EventHandler {
-            System.exit(0)
+            exitProcess(0)
         }
 
         // Set mediators
@@ -106,7 +107,7 @@ class AppLogin : Application(), Mediator {
         // ˅
         if (buttonOk?.isPressed == true
                 || buttonCancel?.isPressed == true) {
-            System.exit(0)
+            exitProcess(0)
         } else {
             if (radioGuest?.isSelected == true) {    // Guest mode
                 textUsername?.setActivation(false)

@@ -15,7 +15,7 @@ object LargeSizeCharFactory {
     // Create an instance of the large size character.
     fun getLargeSizeChar(charName: Char): LargeSizeChar {
         // ˅
-        var lsc = poolChars.get(charName)
+        var lsc = poolChars[charName]
         if (lsc == null) {
             lsc = LargeSizeChar(charName) // Create an instance
             poolChars[charName] = lsc

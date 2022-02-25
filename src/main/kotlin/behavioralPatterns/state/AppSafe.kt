@@ -14,6 +14,7 @@ import javafx.scene.layout.VBox
 import javafx.scene.text.Font
 import javafx.stage.Stage
 import kotlin.concurrent.thread
+import kotlin.system.exitProcess
 
 // ˄
 
@@ -73,7 +74,7 @@ class AppSafe : Application(), Context {
         primaryStage.scene = scene
         primaryStage.title = "State Example"
         primaryStage.onCloseRequest = EventHandler {
-            System.exit(0)
+            exitProcess(0)
         }
 
         // Show
