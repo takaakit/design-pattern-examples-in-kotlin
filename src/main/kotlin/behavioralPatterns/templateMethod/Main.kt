@@ -4,7 +4,7 @@ package behavioralPatterns.templateMethod
 Display a character or string repeatedly 5 times.
  */
 
-fun main(args: Array<String>) {
+fun main() {
     val display1 = CharDisplay('H')
     display1.output()
 

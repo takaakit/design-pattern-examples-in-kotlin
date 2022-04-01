@@ -26,7 +26,7 @@ class Directory(name: String) : FileSystemElement() {
         // ˄
 
     // Collection of elements
-    private val elements: MutableList<FileSystemElement> = mutableListOf<FileSystemElement>()
+    private val elements: MutableList<FileSystemElement> = mutableListOf()
         // ˅
         
         // ˄

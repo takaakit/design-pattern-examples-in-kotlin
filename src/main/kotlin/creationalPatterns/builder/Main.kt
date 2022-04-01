@@ -9,7 +9,7 @@ Create documents in HTML format and text format. It is possible to create differ
 in the same construction process.
  */
 
-fun main(args: Array<String>) {
+fun main() {
     println("Please enter \"plain\" or \"html\":")
     val scan = Scanner(System.`in`)
     val inputValue = scan.next()

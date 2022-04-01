@@ -5,7 +5,7 @@ Represents a file system composed of files and directories. FileSystemElement ma
 it possible to treat File and Directory uniformly.
  */
 
-fun main(args: Array<String>) {
+fun main() {
     println("Create a file system...")
 
     val binDir = Directory("bin")

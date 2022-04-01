@@ -4,7 +4,7 @@ package behavioralPatterns.visitor
 Visitor visits the file system composed of files and directories, and displays a list of files/directories.
  */
 
-fun main(args: Array<String>) {
+fun main() {
     println("Create a file system...")
 
     val binDir = Directory("bin")

@@ -8,7 +8,7 @@ but the actual credit card is created by the CreditCardFactory.
 The "createProduct()" is called a Factory Method, and it is responsible for manufacturing an object.
  */
 
-fun main(args: Array<String>) {
+fun main() {
     val factory = CreditCardFactory()
 
     val jacksonCard = factory.create("Jackson")

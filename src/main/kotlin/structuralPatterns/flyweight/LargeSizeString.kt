@@ -6,7 +6,7 @@ class LargeSizeString(string: String) {
     // ˅
     // ˄
 
-    private val largeSizeChars: MutableList<LargeSizeChar> = mutableListOf<LargeSizeChar>()
+    private val largeSizeChars: MutableList<LargeSizeChar> = mutableListOf()
         // ˅
         
         // ˄

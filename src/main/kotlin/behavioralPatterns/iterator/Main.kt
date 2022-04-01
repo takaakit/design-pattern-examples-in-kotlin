@@ -4,7 +4,7 @@ package behavioralPatterns.iterator
 Add books in a bookshelf and display the names of the book in turn.
  */
 
-fun main(args: Array<String>) {
+fun main() {
     val bookShelf = BookShelf(5)
     bookShelf.add(Book("Design Patterns: Elements of Reusable Object-Oriented Software"))
     bookShelf.add(Book("The Object Primer: Agile Model-Driven Development with UML 2.0"))

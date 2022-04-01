@@ -1,6 +1,5 @@
 package behavioralPatterns.observer
 // ˅
-import java.util.*
 
 // ˄
 

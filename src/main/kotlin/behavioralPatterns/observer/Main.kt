@@ -7,7 +7,7 @@ Observers observe objects generating a numerical value and display the value.
 The display formats are digits and bar charts.
  */
 
-fun main(args: Array<String>) {
+fun main() {
     val numberSubject = NumberSubject()
     numberSubject.attach(DigitObserver(numberSubject))
     numberSubject.attach(BarChartObserver(numberSubject))

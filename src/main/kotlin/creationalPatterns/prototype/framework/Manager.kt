@@ -6,7 +6,7 @@ class Manager {
     // ˅
     // ˄
 
-    private val display: MutableMap<String, Display> = mutableMapOf<String, Display>()
+    private val display: MutableMap<String, Display> = mutableMapOf()
         // ˅
         
         // ˄

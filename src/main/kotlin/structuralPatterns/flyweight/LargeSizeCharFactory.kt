@@ -7,7 +7,7 @@ object LargeSizeCharFactory {
     
     // ˄
 
-    private val poolChars: MutableMap<Char, LargeSizeChar> = mutableMapOf<Char, LargeSizeChar>()
+    private val poolChars: MutableMap<Char, LargeSizeChar> = mutableMapOf()
         // ˅
         
         // ˄

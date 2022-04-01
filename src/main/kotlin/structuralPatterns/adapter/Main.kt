@@ -11,7 +11,7 @@ or display it as follows.
 ```
  */
 
-fun main(args: Array<String>) {
+fun main() {
     val p: Print = PrintMessageDisplay("Nice to meet you")
     p.printWeak()
     p.printStrong()

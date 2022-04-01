@@ -10,7 +10,7 @@ the Manager class asks those registered instances to return a clone. The Client 
 requires the returned clones to display.
  */
 
-fun main(args: Array<String>) {
+fun main() {
     val manager = Manager()
 
     // Register instances of the "Display" subclass

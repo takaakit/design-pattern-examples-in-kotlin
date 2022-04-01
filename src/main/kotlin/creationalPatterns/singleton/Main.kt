@@ -4,7 +4,7 @@ package creationalPatterns.singleton
 Check whether the same instance is obtained.
  */
 
-fun main(args: Array<String>) {
+fun main() {
     val obj1 = Singleton
     val obj2 = Singleton
     if (obj1 === obj2) {

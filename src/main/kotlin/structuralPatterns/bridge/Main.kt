@@ -4,7 +4,7 @@ package structuralPatterns.bridge
 Display only one line or display the specified number of lines.
  */
 
-fun main(args: Array<String>) {
+fun main() {
     val d1 = Display(TextDisplayImpl("Japan"))
     d1.output()
 

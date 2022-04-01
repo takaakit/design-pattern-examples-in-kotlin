@@ -8,7 +8,7 @@ A game of rock-scissors-paper. Two strategies are available:
 * Mirror Strategy: showing a hand signal from the previous opponent's hand signal.
  */
 
-fun main(args: Array<String>) {
+fun main() {
     val player1 = Player("Emily", RandomStrategy())
     val player2 = Player("James", MirrorStrategy())
 

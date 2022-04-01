@@ -8,7 +8,7 @@ abstract class Data(name: String) : Item(name) {
     
     // ˄
 
-    protected var items: MutableList<Item> = mutableListOf<Item>()
+    protected var items: MutableList<Item> = mutableListOf()
         // ˅
         
         // ˄

@@ -7,7 +7,7 @@ open class Subject {
     // ˅
     // ˄
 
-    private val observers: MutableList<Observer> = mutableListOf<Observer>()
+    private val observers: MutableList<Observer> = mutableListOf()
         // ˅
         
         // ˄

@@ -14,7 +14,7 @@ class DigitObserver(numberSubject: NumberSubject) : Observer {
 
     override fun update(changedSubject: Subject) {
         // ˅
-        if (changedSubject == numberSubject) {
+        if (changedSubject === numberSubject) {
             println("Digit    : ${numberSubject.value}")
         }
         // ˄

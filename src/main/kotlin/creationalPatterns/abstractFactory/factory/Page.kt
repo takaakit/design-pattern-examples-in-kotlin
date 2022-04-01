@@ -2,8 +2,6 @@ package creationalPatterns.abstractFactory.factory
 // ˅
 import java.io.File
 import java.io.FileWriter
-import java.io.IOException
-import java.util.*
 
 // ˄
 
@@ -22,7 +20,7 @@ abstract class Page(title: String, author: String) {
         
         // ˄
 
-    protected var contents: MutableList<Item> = mutableListOf<Item>()
+    protected var contents: MutableList<Item> = mutableListOf()
         // ˅
         
         // ˄

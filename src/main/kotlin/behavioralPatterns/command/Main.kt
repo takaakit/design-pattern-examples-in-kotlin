@@ -9,6 +9,6 @@ Simple drawing application:
 * Erase all drawing by pressing the Clear button.
  */
 
-fun main(args: Array<String>) {
+fun main() {
     Application.launch(AppMain::class.java, null)
 }

@@ -14,7 +14,7 @@ class BarChartObserver(numberSubject: NumberSubject) : Observer {
 
     override fun update(changedSubject: Subject) {
         // ˅
-        if (changedSubject.equals(numberSubject)) {
+        if (changedSubject === numberSubject) {
             print("Bar chart: ")
             for (i in 0 until numberSubject.value) {
                 print("*")

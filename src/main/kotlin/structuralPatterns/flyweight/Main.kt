@@ -40,7 +40,7 @@ Please enter digits (ex. 1212123): 123
    ########
  */
 
-fun main(args: Array<String>) {
+fun main() {
     println("Please enter digits (ex. 1212123):")
     val scan = Scanner(System.`in`)
     val inputValue = scan.next()

@@ -8,7 +8,7 @@ A dice game in which money increases and decreases:
 * The game is repeated.
  */
 
-fun main(args: Array<String>) {
+fun main() {
     val gamer = Gamer(100) // The initial money is 100
     var memento = gamer.createMemento() // Save the initial state
     for (i in 0..9) {

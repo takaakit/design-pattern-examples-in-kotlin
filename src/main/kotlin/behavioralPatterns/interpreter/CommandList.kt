@@ -6,7 +6,7 @@ class CommandList : Node {
     // ˅
     // ˄
 
-    private val nodes: MutableList<Node> = mutableListOf<Node>()
+    private val nodes: MutableList<Node> = mutableListOf()
         // ˅
         
         // ˄

@@ -9,7 +9,7 @@ There are four types of supporters below:
 * LimitedSupporter handles troubles below the limit ID.
  */
 
-fun main(args: Array<String>) {
+fun main() {
     val emily = LazySupporter("Emily")
     val william = MoodySupporter("William")
     val amelia = SpecialSupporter("Amelia", 6)

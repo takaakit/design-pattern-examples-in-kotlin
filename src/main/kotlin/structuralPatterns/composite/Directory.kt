@@ -23,7 +23,7 @@ class Directory(name: String) : FileSystemElement() {
         }
         // ˄
 
-    private val elements: MutableList<FileSystemElement> = mutableListOf<FileSystemElement>()
+    private val elements: MutableList<FileSystemElement> = mutableListOf()
         // ˅
         
         // ˄

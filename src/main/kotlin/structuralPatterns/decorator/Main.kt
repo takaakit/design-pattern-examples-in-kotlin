@@ -4,7 +4,7 @@ package structuralPatterns.decorator
 Display a string with decorative frames. The frames can be combined arbitrarily.
  */
 
-fun main(args: Array<String>) {
+fun main() {
     val displayA: Display = MessageDisplay("Nice to meet you.")
     displayA.show()
 

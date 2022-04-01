@@ -10,12 +10,12 @@ import kotlin.system.exitProcess
 Create a hierarchical link collection as an HTML file. It can be created in either tabular or list format.
  */
 
-fun main(args: Array<String>) {
+fun main() {
     println("Please enter a number (1 or 2):")
     println("  1: Create objects by using ListFactory")
     println("  2: Create objects by using TableFactory")
     val scan = Scanner(System.`in`)
-    var number = 0
+    val number: Int
     try {
         number = scan.nextInt()
     } catch (e: InputMismatchException) {
@@ -23,7 +23,7 @@ fun main(args: Array<String>) {
         exitProcess(-1)
     }
 
-    var factory: Factory? = null
+    val factory: Factory
     if (number == 1) {
         factory = ListFactory()
     } else if (number == 2) {
