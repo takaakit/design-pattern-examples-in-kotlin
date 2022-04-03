@@ -12,7 +12,7 @@ class Context(line: String) {
         // ˅
         // ˄
 
-    var token: String? = null
+    var currentToken: String? = null
         // ˅
         private set
         // ˄
@@ -21,7 +21,7 @@ class Context(line: String) {
         // ˅
         get() {
             val number: Int = try {
-                token!!.toInt()
+                currentToken!!.toInt()
             } catch (e: NumberFormatException) {
                 throw Exception("WARNING: $e")
             }
@@ -32,18 +32,18 @@ class Context(line: String) {
     fun nextToken(): String? {
         // ˅
         if (tokenizer.hasMoreTokens()) {
-            token = tokenizer.nextToken()
+            currentToken = tokenizer.nextToken()
         } else {
-            token = null
+            currentToken = null
         }
-        return token
+        return currentToken
         // ˄
     }
 
     fun slideToken(token: String?) {
         // ˅
-        if (token != this.token) {
-            throw Exception("WARNING: " + token + " is expected but " + this.token + " was found.")
+        if (token != this.currentToken) {
+            throw Exception("WARNING: " + token + " is expected but " + this.currentToken + " was found.")
         }
         nextToken()
         // ˄

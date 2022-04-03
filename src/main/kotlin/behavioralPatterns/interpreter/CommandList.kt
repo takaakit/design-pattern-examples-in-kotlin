@@ -14,9 +14,9 @@ class CommandList : Node {
     override fun parse(context: Context) {
         // ˅
         while (true) {
-            if (context.token == null) {
+            if (context.currentToken == null) {
                 throw Exception("Missing 'end'")
-            } else if (context.token == "end") {
+            } else if (context.currentToken == "end") {
                 context.slideToken("end")
                 break
             } else {

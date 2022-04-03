@@ -14,7 +14,7 @@ class Action : Node {
 
     override fun parse(context: Context) {
         // ˅
-        val currentToken = context.token
+        val currentToken = context.currentToken
         if (currentToken != "forward" && currentToken != "right" && currentToken != "left") {
             throw Exception("$currentToken is unknown")
         }

@@ -14,7 +14,7 @@ class Command : Node {
     override fun parse(context: Context) {
         // ˅
         val aNode: Node
-        when (context.token) {
+        when (context.currentToken) {
             "repeat" -> {
                 aNode = Repeat()
                 aNode.parse(context)
