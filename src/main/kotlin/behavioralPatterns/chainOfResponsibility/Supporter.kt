@@ -34,7 +34,7 @@ abstract class Supporter(name: String) {
         // ˄
     }
 
-    // Set a next supporter.
+    // Set a next supporter and return it.
     fun setNext(next: Supporter): Supporter {
         // ˅
         this.next = next

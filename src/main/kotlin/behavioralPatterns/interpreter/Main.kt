@@ -36,6 +36,7 @@ After parsing  : [program [repeat 4 [forward, right]]]
 */
 
 fun main() {
+    // Reads commands line by line from the "program.txt" and parses them.
     File("src/main/kotlin/behavioralPatterns/interpreter/program.txt").bufferedReader().use { it ->
         it.lineSequence()
                 .filter(String::isNotBlank)
