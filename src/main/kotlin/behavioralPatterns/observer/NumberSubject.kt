@@ -12,6 +12,7 @@ class NumberSubject : Subject() {
         // ˅
         get() = field
         set(value) {
+            // Notify observers when the value is set.
             field = value
             notifyObservers()
         }
