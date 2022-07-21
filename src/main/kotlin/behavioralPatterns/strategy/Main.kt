@@ -15,6 +15,8 @@ fun main() {
     for (i in 0..99) {
         val handOfPlayer1 = player1.showHandSignal()
         val handOfPlayer2 = player2.showHandSignal()
+
+        // Judge win, loss, or draw
         var resultOfPlayer1: GameResultType?
         var resultOfPlayer2: GameResultType?
         if (handOfPlayer1.isStrongerThan(handOfPlayer2)) {
@@ -30,6 +32,7 @@ fun main() {
             resultOfPlayer1 = Draw
             resultOfPlayer2 = Draw
         }
+
         player1.notifyGameResult(resultOfPlayer1, handOfPlayer1, handOfPlayer2)
         player2.notifyGameResult(resultOfPlayer2, handOfPlayer2, handOfPlayer1)
     }
