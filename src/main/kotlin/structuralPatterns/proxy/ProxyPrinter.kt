@@ -20,7 +20,11 @@ class ProxyPrinter(name: String) : Printer {
 
     override fun getName(): String {
         // ˅
-        return currentName
+        if (real != null) {
+            return real!!.getName()
+        } else {
+            return currentName
+        }
         // ˄
     }
 
