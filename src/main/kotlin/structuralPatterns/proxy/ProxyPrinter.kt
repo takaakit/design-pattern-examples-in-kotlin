@@ -41,7 +41,7 @@ class ProxyPrinter(name: String) : Printer {
 
     override fun output(content: String) {
         // ˅
-        // Check to see if the the RealPrinter had been created, create it if necessary.
+        // Check to see if the RealPrinter had been created, create it if necessary.
         if (real == null) {
             real = RealPrinter(currentName)
         }
