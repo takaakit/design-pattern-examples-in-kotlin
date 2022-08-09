@@ -16,11 +16,7 @@ class BarChartObserver(numberSubject: NumberSubject) : Observer {
         // ˅
         // Before processing, it checks to make sure the changed subject is the subject held.
         if (changedSubject === numberSubject) {
-            print("Bar chart: ")
-            for (i in 0 until numberSubject.value) {
-                print("*")
-            }
-            println()
+            println("Bar chart: ${"*".repeat(numberSubject.value)}")
         }
         // ˄
     }

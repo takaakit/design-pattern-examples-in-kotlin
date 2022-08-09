@@ -39,11 +39,9 @@ class TextDisplayImpl(text: String) : DisplayImpl {
 
     private fun printLine() {
         // ˅
-        print("*") // Display "*" mark at the beginning of a frame.
-        for (i in 0 until width) {               // Display "." for the number of "width".
-            print(".")
-        }
-        print("*\n") // Display "*" mark at the end of a frame.
+        print("*")                  // Display "*" mark at the beginning of a frame.
+        print(".".repeat(width))    // Display "." for the number of "width".
+        println("*")                // Display "*" mark at the end of a frame.
         // ˄
     }
 

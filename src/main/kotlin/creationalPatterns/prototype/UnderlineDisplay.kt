@@ -22,13 +22,8 @@ class UnderlineDisplay(underlineChar: Char) : Display {
 
     override fun show(message: String) {
         // ˅
-        val length = message.length
         println("\"$message\"")
-        print(" ")
-        for (i in 0 until length) {
-            print(underlineChar)
-        }
-        println()
+        println(" ${underlineChar.toString().repeat(message.length)}")
         // ˄
     }
 

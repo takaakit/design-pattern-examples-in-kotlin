@@ -35,11 +35,7 @@ class FullFrame(display: Display) : Frame(display) {
 
     private fun createLine(ch: Char, size: Int): String {
         // ˅
-        val builder = StringBuilder()
-        for (i in 0 until size) {
-            builder.append(ch)
-        }
-        return builder.toString()
+        return ch.toString().repeat(size)
         // ˄
     }
 

@@ -38,11 +38,9 @@ class StringDisplay(stringValue: String) : AbstractDisplay() {
 
     private fun writeLine() {
         // ˅
-        print("+") // Display an end mark "+"
-        for (i in 0 until width) {
-            print("-") // Display a line "-"
-        }
-        println("+") // Display an end mark "+"
+        print("+")                  // Display an end mark "+"
+        print("-".repeat(width))    // Display a line "-"
+        println("+")                // Display an end mark "+"
         // ˄
     }
 
