@@ -58,7 +58,7 @@ Installation
 ------------
 **UML Modeling Tool**
 * Download the modeling tool [Astah](http://astah.net/download) UML or Professional, and install.  
-* Download [M PLUS](https://sites.google.com/view/m-plus-plugin/download) plug-in **ver.1.9** or higher, and add it to Astah.  
+* Download [M PLUS](https://sites.google.com/view/m-plus-plugin/download) plug-in **ver.2.8.2** or higher, and add it to Astah.  
   [How to add plugins to Astah](https://astahblog.com/2014/12/15/astah_plugins/)
 
 **Kotlin Development Environment**
