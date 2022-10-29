@@ -1,6 +1,5 @@
 package behavioralPatterns.command
 // ˅
-import java.util.Stack
 
 // ˄
 
@@ -11,7 +10,7 @@ class HistoryCommand : Command {
     // ˄
 
     // A set of past commands
-    private val pastCommands: Stack<Command> = Stack()
+    private val pastCommands: ArrayDeque<Command> = ArrayDeque()
         // ˅
         
         // ˄
@@ -27,7 +26,7 @@ class HistoryCommand : Command {
 
     fun add(cmd: Command) {
         // ˅
-        pastCommands.push(cmd)
+        pastCommands.add(cmd)
         // ˄
     }
 
@@ -35,7 +34,7 @@ class HistoryCommand : Command {
     fun undo() {
         // ˅
         if (!pastCommands.isEmpty()) {
-            pastCommands.pop()
+            pastCommands.removeLast()
         }
         // ˄
     }
