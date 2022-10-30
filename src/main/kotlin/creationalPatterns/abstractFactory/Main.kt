@@ -24,13 +24,17 @@ fun main() {
     }
 
     val factory: Factory
-    if (number == 1) {
-        factory = ListFactory()
-    } else if (number == 2) {
-        factory = TableFactory()
-    } else {
-        System.err.println("The value is not 1 or 2.")
-        exitProcess(-1)
+    when (number) {
+        1 -> {
+            factory = ListFactory()
+        }
+        2 -> {
+            factory = TableFactory()
+        }
+        else -> {
+            System.err.println("The value is not 1 or 2.")
+            exitProcess(-1)
+        }
     }
 
     val washingtonPost = factory.createLink("The Washington Post", "https://www.washingtonpost.com/")
